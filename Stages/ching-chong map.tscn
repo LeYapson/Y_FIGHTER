@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dis7ec2k060tw"]
+
+[ext_resource type="Script" path="res://addons/goshapes/Goshape.gd" id="1_xpupt"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="BlockShape1" type="Path3D" parent="."]
+script = ExtResource("1_xpupt")
