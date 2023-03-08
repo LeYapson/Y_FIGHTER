@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dis7ec2k060tw"]
 
-[ext_resource type="Script" path="res://addons/goshapes/Goshape.gd" id="1_xpupt"]
+[ext_resource type="PackedScene" uid="uid://41ixd0xy5k08" path="res://Stages/Bin chilling map/map comple.fbx" id="1_4w4fe"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="BlockShape1" type="Path3D" parent="."]
-script = ExtResource("1_xpupt")
+[node name="ching-chong-map" parent="." instance=ExtResource("1_4w4fe")]
+transform = Transform3D(4.19174, 0, 2.72568, 0, 5, 0, -2.72568, 0, 4.19174, 0.0612708, -0.0303735, 0)
