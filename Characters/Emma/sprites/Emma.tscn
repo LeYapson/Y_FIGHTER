@@ -96,7 +96,7 @@ animations = [{
 
 [sub_resource type="Animation" id="Animation_2bahd"]
 resource_name = "Idle"
-step = 0.0333333
+step = 0.0833333
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -116,7 +116,7 @@ tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"times": PackedFloat32Array(0, 0.0867221, 0.168337, 0.24791, 0.335653, 0.419311, 0.501948, 0.586627, 0.669263, 0.753943, 0.833515),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [4, 7, 5, 9, 11, 5, 2, 5, 3, 7, 9]
