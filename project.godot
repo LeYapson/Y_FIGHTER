@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Y_FIGHTER"
-run/main_scene="res://Stages/test stage 2d.tscn"
+run/main_scene="res://Stages/ching-chong map test.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
 

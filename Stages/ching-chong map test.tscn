@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dis7ec2k060tw"]
 
-[ext_resource type="PackedScene" uid="uid://41ixd0xy5k08" path="res://Stages/Bin chilling map/map comple.fbx" id="1_4w4fe"]
+[ext_resource type="PackedScene" uid="uid://41ixd0xy5k08" path="res://Stages/Bin chilling map/map comple.fbx" id="1_3q07f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2hvp3"]
 size = Vector3(2.92351, 0.144225, 1.09392)
@@ -10,7 +10,7 @@ size = Vector3(22.5687, 8.48327, 5.80883)
 
 [node name="Node3D" type="Node3D"]
 
-[node name="ching-chong-map" parent="." instance=ExtResource("1_4w4fe")]
+[node name="ching-chong-map" parent="." instance=ExtResource("1_3q07f")]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
@@ -30,7 +30,7 @@ transform = Transform3D(0.536004, 0, -0.844216, 0, 1, 0, 0.844216, 0, 0.536004, 
 shape = SubResource("BoxShape3D_3hayx")
 
 [node name="Walls2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.838671, 0, -0.544639, 0, 1, 0, 0.544639, 0, 0.838671, -35.7737, -0.0149269, 0.923872)
+transform = Transform3D(0.838671, 0, -0.544639, 0, 1, 0, 0.544639, 0, 0.838671, -35.7737, -0.0149269, 0.442137)
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Walls2"]
