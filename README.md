@@ -8,9 +8,14 @@ name of the game:(Y_FIGHTER)
 " Y_FIGHTER is a 2D fighting game based on the concept of the different fields of study present in the YNOV campus.
 Each character in the game will represent one of the fields of study present in YNOV, namely: INFORMATICS, 3D ANIMATION, MARKET-COM, CREA-DESIGN, AUDIOVISUAL and ARCHITECTURE.
 The game will be divided into 2 game modes: 
+
 -the FIGHT mode which will allow you to prove your strength against the opponent of your choice in a 1v1 duel.
+
 -the TRAINING mode which will allow you to test all the characters of the game on a dummy who has agreed to suffer for you.
+
 NB: for the most experienced of games of all kinds you may not be safe from one or more easter-eggs in the game ;)"
+
+
 
 
 -script of the game:
