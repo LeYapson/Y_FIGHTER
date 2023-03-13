@@ -1,11 +1,41 @@
-[gd_scene load_steps=2 format=3 uid="uid://dis7ec2k060tw"]
+[gd_scene load_steps=4 format=3 uid="uid://dis7ec2k060tw"]
 
 [ext_resource type="PackedScene" uid="uid://41ixd0xy5k08" path="res://Stages/Bin chilling map/map comple.fbx" id="1_4w4fe"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2hvp3"]
+size = Vector3(2.92351, 0.144225, 1.09392)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hayx"]
+size = Vector3(22.5687, 8.48327, 5.80883)
 
 [node name="Node3D" type="Node3D"]
 
 [node name="ching-chong-map" parent="." instance=ExtResource("1_4w4fe")]
-transform = Transform3D(4.19335, 0, 2.7232, 0, 5, 0, -2.7232, 0, 4.19335, 0, 0, 0)
+transform = Transform3D(16.7734, 0, 10.8928, 0, 20, 0, -10.8928, 0, 16.7734, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.831295, 0, 0.555831, 0, 1, 0, -0.555831, 0, 0.831295, 3.49213, 1.80254, 5.50822)
+transform = Transform3D(415.648, 0, 277.916, 0, 500, 0, -277.916, 0, 415.648, 3.49213, 1.80254, 5.50822)
+current = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 0, 0)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(0.83727, 0, 0.54679, 0, 1, 0, -0.54679, 0, 0.83727, 0.196915, 0.0827189, 0.330515)
+shape = SubResource("BoxShape3D_2hvp3")
+
+[node name="Walls" type="StaticBody3D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls"]
+transform = Transform3D(0.536004, 0, -0.844216, 0, 1, 0, 0.844216, 0, 0.536004, 18.6546, 4.45853, -3.2409)
+shape = SubResource("BoxShape3D_3hayx")
+
+[node name="Walls2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.4674, -0.0149231, 20.0105)
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Walls2"]
+transform = Transform3D(0.536004, 0, -0.844216, 0, 1, 0, 0.844216, 0, 0.536004, 18.6546, 4.45853, -3.2409)
+shape = SubResource("BoxShape3D_3hayx")
