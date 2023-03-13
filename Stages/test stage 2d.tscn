@@ -41,7 +41,7 @@ text = "Wall"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = -1140
-limit_top = -710
+limit_top = -717
 limit_right = 1150
 limit_bottom = 550
 drag_horizontal_enabled = true
