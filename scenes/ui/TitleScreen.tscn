@@ -1,0 +1,79 @@
+[gd_scene load_steps=6 format=3 uid="uid://brgt8b4xca5nv"]
+
+[ext_resource type="Texture2D" uid="uid://6s0q0yrhju6l" path="res://assets/ui/MAINMENU.png" id="1"]
+[ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="2"]
+[ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="4"]
+[ext_resource type="Script" path="res://scripts/ui/TitleScreen.gd" id="5"]
+
+[node name="TitleScreen" type="Panel"]
+script = ExtResource("5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 0
+offset_right = 1024.0
+offset_bottom = 600.0
+texture = ExtResource("1")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.165
+offset_left = 705.0
+offset_top = 238.0
+offset_right = 965.0
+offset_bottom = 486.0
+
+[node name="Play" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3")
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Label" type="Label" parent="VBoxContainer/Play"]
+layout_mode = 0
+offset_left = 78.0
+offset_top = 7.0
+offset_right = 174.0
+offset_bottom = 70.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 60
+text = "PLAY"
+
+[node name="Training" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3")
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Label" type="Label" parent="VBoxContainer/Training"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 220.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 60
+text = "TRAINING"
+
+[node name="Quit" type="TextureButton" parent="VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3")
+texture_pressed = ExtResource("4")
+texture_hover = ExtResource("4")
+
+[node name="Label" type="Label" parent="VBoxContainer/Quit"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 170.0
+offset_bottom = 71.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 60
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="VBoxContainer/Training" to="." method="_on_Training_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_Quit_pressed"]
