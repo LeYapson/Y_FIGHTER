@@ -1,12 +1,11 @@
-extends KinematicBody2D
+extends CharacterBody3D
 
 var health = 1000
 var speed = 400
 var gravity = 1200
 var jump_force = -400
 var force = 10
-# Vector2 pour stocker la vitesse actuelle du personnage
-var velocity = Vector2.ZERO
+
 var state_machine
 var controls_enabled : bool = true
 
@@ -54,7 +53,7 @@ func _physics_process(delta):
 		return  # Ceci empêchera le code suivant de s'exécuter, ce qui signifie que l'animation "Jump" ne sera pas interrompue.
 	
 	# Déplacement du personnage en utilisant move_and_slide
-	velocity = move_and_slide(velocity, Vector2.UP)
+	move_and_slide()
 
 func attack():
 	# Handle light_attack
