@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://t6n3covesgk3"]
+
+[ext_resource type="Script" path="res://scripts/selectMap.gd" id="1_gh5xi"]
+[ext_resource type="Texture2D" uid="uid://cuneshuqc8nvh" path="res://assets/ui/menu map.jpg" id="1_ottt4"]
+[ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="2_30y5y"]
+[ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="3_06ogj"]
+[ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="4_e8oth"]
+
+[node name="selectMap" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gh5xi")
+
+[node name="selectMapLayer" type="CanvasLayer" parent="."]
+
+[node name="MenuMap" type="TextureRect" parent="selectMapLayer"]
+offset_right = 1024.0
+offset_bottom = 600.0
+texture = ExtResource("1_ottt4")
+expand_mode = 1
+
+[node name="Select" type="TextureButton" parent="selectMapLayer"]
+offset_left = 627.0
+offset_top = 448.0
+offset_right = 887.0
+offset_bottom = 528.0
+texture_normal = ExtResource("2_30y5y")
+texture_pressed = ExtResource("3_06ogj")
+texture_hover = ExtResource("3_06ogj")
+
+[node name="Label" type="Label" parent="selectMapLayer/Select"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -1.0
+offset_right = 225.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("4_e8oth")
+theme_override_font_sizes/font_size = 80
+text = "SELECT"
+
+[connection signal="pressed" from="selectMapLayer/Select" to="." method="_on_select_pressed"]

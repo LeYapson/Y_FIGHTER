@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjji31qsvfn8b"]
+
+[ext_resource type="Script" path="res://scripts/selectCharacter.gd" id="1_tif0d"]
+[ext_resource type="Texture2D" uid="uid://dlf4y7moyngm5" path="res://assets/ui/character menu.png" id="2_ef6xw"]
+[ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="2_mhsjd"]
+[ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="2_oxewu"]
+[ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="3_gkgis"]
+
+[node name="selectCharacter" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tif0d")
+
+[node name="SelectCharacterLayer" type="CanvasLayer" parent="."]
+
+[node name="CharacterMenu" type="TextureRect" parent="SelectCharacterLayer"]
+offset_right = 1024.0
+offset_bottom = 600.0
+texture = ExtResource("2_ef6xw")
+
+[node name="perso1" type="TextureButton" parent="SelectCharacterLayer"]
+offset_left = 126.0
+offset_top = 445.0
+offset_right = 386.0
+offset_bottom = 525.0
+texture_normal = ExtResource("2_oxewu")
+texture_pressed = ExtResource("3_gkgis")
+texture_hover = ExtResource("3_gkgis")
+
+[node name="Label" type="Label" parent="SelectCharacterLayer/perso1"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -6.0
+offset_right = 228.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("2_mhsjd")
+theme_override_font_sizes/font_size = 80
+text = "SELECT"
+
+[node name="perso2" type="TextureButton" parent="SelectCharacterLayer"]
+offset_left = 621.0
+offset_top = 445.0
+offset_right = 881.0
+offset_bottom = 525.0
+texture_normal = ExtResource("2_oxewu")
+texture_pressed = ExtResource("3_gkgis")
+texture_hover = ExtResource("3_gkgis")
+
+[node name="Label" type="Label" parent="SelectCharacterLayer/perso2"]
+layout_mode = 0
+offset_left = 36.0
+offset_top = -6.0
+offset_right = 228.0
+offset_bottom = 77.0
+theme_override_fonts/font = ExtResource("2_mhsjd")
+theme_override_font_sizes/font_size = 80
+text = "SELECT"
+
+[connection signal="pressed" from="SelectCharacterLayer/perso1" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="SelectCharacterLayer/perso2" to="." method="_on_texture_button_pressed"]
