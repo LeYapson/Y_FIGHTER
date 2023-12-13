@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://xs3qymoiauid"]
+[gd_scene load_steps=9 format=3 uid="uid://xs3qymoiauid"]
 
 [ext_resource type="Texture2D" uid="uid://dhrso55ce6ete" path="res://assets/ui/PressStartScreen.png" id="1"]
 [ext_resource type="Script" path="res://scripts/ui/PressStartScreen.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="3_ym7q5"]
 [ext_resource type="Texture2D" uid="uid://j3gw4mli84l" path="res://assets/ui/Banniere_16_9.png" id="4"]
 
 [sub_resource type="Animation" id="2"]
@@ -111,6 +112,17 @@ offset_right = 1024.0
 offset_bottom = 600.0
 texture = ExtResource("1")
 expand_mode = 1
+
+[node name="version" type="Label" parent="PressStartLayer"]
+offset_left = 525.0
+offset_top = 535.0
+offset_right = 1023.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("3_ym7q5")
+theme_override_font_sizes/font_size = 40
+text = "ALPHA PRE RELEASE V0.3-YOGURT-X"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Label" type="Label" parent="PressStartLayer"]
 offset_left = 358.0

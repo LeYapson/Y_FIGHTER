@@ -56,7 +56,8 @@ offset_right = 220.0
 offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 60
-text = "TRAINING"
+text = "SOON"
+horizontal_alignment = 1
 
 [node name="Quit" type="TextureButton" parent="VBoxContainer"]
 layout_mode = 2
@@ -73,6 +74,18 @@ offset_bottom = 71.0
 theme_override_fonts/font = ExtResource("2")
 theme_override_font_sizes/font_size = 60
 text = "QUIT"
+
+[node name="version" type="Label" parent="."]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 535.0
+offset_right = 1023.0
+offset_bottom = 598.0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 40
+text = "ALPHA PRE RELEASE V0.3-YOGURT-X"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_Play_pressed"]
 [connection signal="pressed" from="VBoxContainer/Training" to="." method="_on_Training_pressed"]
