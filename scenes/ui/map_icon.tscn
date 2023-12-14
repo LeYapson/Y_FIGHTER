@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbsoson37utwj"]
+[gd_scene load_steps=2 format=3 uid="uid://cbsoson37utwj"]
 
 [ext_resource type="Script" path="res://scenes/ui/map_icon.gd" id="1_pgrgu"]
-[ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="2_20gou"]
 
 [node name="mapIcon" type="Control"]
 layout_mode = 3
@@ -18,14 +17,3 @@ offset_left = -3.0
 offset_right = 40.0
 offset_bottom = 41.0
 expand_mode = 1
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 285.0
-offset_top = -368.0
-offset_right = 325.0
-offset_bottom = -308.0
-theme_override_fonts/font = ExtResource("2_20gou")
-theme_override_font_sizes/font_size = 60
-horizontal_alignment = 1
-vertical_alignment = 1

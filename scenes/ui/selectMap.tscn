@@ -123,6 +123,17 @@ offset_bottom = 40.0
 texture = ExtResource("3_o60ur")
 expand_mode = 3
 
+[node name="mapName" type="Label" parent="selectMapLayer/MenuMap"]
+layout_mode = 0
+offset_left = 577.0
+offset_top = 116.0
+offset_right = 986.0
+offset_bottom = 176.0
+theme_override_fonts/font = ExtResource("4_e8oth")
+theme_override_font_sizes/font_size = 60
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Select" type="TextureButton" parent="selectMapLayer"]
 offset_left = 655.0
 offset_top = 458.0
