@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cbsoson37utwj"]
 
-[ext_resource type="Script" path="res://scenes/ui/map_icon.gd" id="1_pgrgu"]
+[ext_resource type="Script" path="res://scripts/ui/map_icon.gd" id="1_mguac"]
 
 [node name="mapIcon" type="Control"]
 layout_mode = 3
@@ -9,7 +9,7 @@ offset_left = 329.0
 offset_top = 491.0
 offset_right = 369.0
 offset_bottom = 531.0
-script = ExtResource("1_pgrgu")
+script = ExtResource("1_mguac")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0

@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=3 uid="uid://chjujm5f4x0i7"]
+
+[ext_resource type="Texture2D" uid="uid://cm2yhr4bpd3tl" path="res://assets/easter-egg/Settings.png" id="1_7k7nu"]
+[ext_resource type="Script" path="res://scripts/ui/abdelRunOption.gd" id="1_bnnct"]
+[ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="2_eelbg"]
+[ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="3_b6qpv"]
+[ext_resource type="FontFile" uid="uid://dsgdepi1c6nj5" path="res://assets/ui/font/chintzys.ttf" id="4_e5kkt"]
+
+[node name="abdelRunOption" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bnnct")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_7k7nu")
+
+[node name="keyBiding" type="TextureButton" parent="CanvasLayer"]
+offset_left = 738.0
+offset_top = 190.0
+offset_right = 998.0
+offset_bottom = 270.0
+texture_normal = ExtResource("2_eelbg")
+texture_pressed = ExtResource("3_b6qpv")
+texture_hover = ExtResource("3_b6qpv")
+
+[node name="Label" type="Label" parent="CanvasLayer/keyBiding"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 24.0
+offset_right = 239.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = ExtResource("4_e5kkt")
+theme_override_font_sizes/font_size = 30
+text = "modify the key"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 359.0
+offset_top = 189.0
+offset_right = 583.0
+offset_bottom = 243.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_e5kkt")
+theme_override_font_sizes/font_size = 50
+text = "SOON"
+
+[connection signal="pressed" from="CanvasLayer/keyBiding" to="." method="_on_key_biding_pressed"]

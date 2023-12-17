@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://xs3qymoiauid"]
+[gd_scene load_steps=10 format=3 uid="uid://xs3qymoiauid"]
 
 [ext_resource type="Texture2D" uid="uid://dhrso55ce6ete" path="res://assets/ui/PressStartScreen.png" id="1"]
 [ext_resource type="Script" path="res://scripts/ui/PressStartScreen.gd" id="3"]
 [ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="3_ym7q5"]
-[ext_resource type="Texture2D" uid="uid://j3gw4mli84l" path="res://assets/ui/Banniere_16_9.png" id="4"]
+[ext_resource type="VideoStream" path="res://assets/ui/starting-screen.ogv" id="4_hxygk"]
+[ext_resource type="VideoStream" path="res://assets/ui/starting-fixe.ogv" id="5_h07bc"]
 
 [sub_resource type="Animation" id="2"]
 resource_name = "FadeInFadeOut"
@@ -132,15 +133,24 @@ offset_bottom = 452.0
 text = "Appuyez sur start pour commencer"
 uppercase = true
 
-[node name="LoadingScreen" type="Sprite2D" parent="PressStartLayer"]
-position = Vector2(512, 300)
-scale = Vector2(0.533333, 0.555556)
-texture = ExtResource("4")
-
 [node name="Timer" type="Timer" parent="PressStartLayer"]
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="startingFixe" type="VideoStreamPlayer" parent="PressStartLayer"]
+offset_right = 1024.0
+offset_bottom = 600.0
+stream = ExtResource("5_h07bc")
+autoplay = true
+expand = true
+
+[node name="StartingScreen" type="VideoStreamPlayer" parent="PressStartLayer"]
+offset_right = 1024.0
+offset_bottom = 600.0
+stream = ExtResource("4_hxygk")
+autoplay = true
+expand = true
 
 [connection signal="animation_finished" from="PressStartLayer/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="PressStartLayer/Timer" to="." method="_on_Timer_timeout"]

@@ -1,0 +1,98 @@
+[gd_scene load_steps=7 format=3 uid="uid://dl6uef8ekkek2"]
+
+[ext_resource type="Texture2D" uid="uid://dcd7esojorag5" path="res://assets/easter-egg/TitleScreen.jpg" id="1_fpxdu"]
+[ext_resource type="Script" path="res://scripts/ui/abdelRunMenu.gd" id="1_ipf4j"]
+[ext_resource type="Texture2D" uid="uid://7jhesg0176ye" path="res://assets/easter-egg/logo.jpg" id="2_cf2ko"]
+[ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="4_22gbx"]
+[ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="5_hsjcm"]
+[ext_resource type="FontFile" uid="uid://dsgdepi1c6nj5" path="res://assets/ui/font/chintzys.ttf" id="6_elwvj"]
+
+[node name="abdelRunMenu" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ipf4j")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_fpxdu")
+
+[node name="Timer" type="Timer" parent="CanvasLayer"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Play" type="TextureButton" parent="CanvasLayer"]
+offset_left = 649.0
+offset_top = 197.0
+offset_right = 909.0
+offset_bottom = 277.0
+texture_normal = ExtResource("4_22gbx")
+texture_pressed = ExtResource("5_hsjcm")
+texture_hover = ExtResource("5_hsjcm")
+
+[node name="Label" type="Label" parent="CanvasLayer/Play"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 12.0
+offset_right = 213.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(1, 0.917647, 0, 1)
+theme_override_fonts/font = ExtResource("6_elwvj")
+theme_override_font_sizes/font_size = 60
+text = "PLAY"
+
+[node name="Option" type="TextureButton" parent="CanvasLayer"]
+offset_left = 651.0
+offset_top = 317.0
+offset_right = 911.0
+offset_bottom = 397.0
+texture_normal = ExtResource("4_22gbx")
+texture_pressed = ExtResource("5_hsjcm")
+texture_hover = ExtResource("5_hsjcm")
+
+[node name="Label" type="Label" parent="CanvasLayer/Option"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 21.0
+offset_right = 258.0
+offset_bottom = 85.0
+theme_override_colors/font_color = Color(1, 0.917647, 0, 1)
+theme_override_fonts/font = ExtResource("6_elwvj")
+theme_override_font_sizes/font_size = 40
+text = "SETTINGS"
+
+[node name="Quit" type="TextureButton" parent="CanvasLayer"]
+offset_left = 652.0
+offset_top = 441.0
+offset_right = 912.0
+offset_bottom = 521.0
+texture_normal = ExtResource("4_22gbx")
+texture_pressed = ExtResource("5_hsjcm")
+texture_hover = ExtResource("5_hsjcm")
+
+[node name="Label" type="Label" parent="CanvasLayer/Quit"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 12.0
+offset_right = 230.0
+offset_bottom = 76.0
+theme_override_colors/font_color = Color(1, 0.917647, 0, 1)
+theme_override_fonts/font = ExtResource("6_elwvj")
+theme_override_font_sizes/font_size = 60
+text = "QUIT"
+
+[node name="loadingScreen" type="TextureRect" parent="CanvasLayer"]
+offset_right = 1024.0
+offset_bottom = 600.0
+texture = ExtResource("2_cf2ko")
+
+[connection signal="timeout" from="CanvasLayer/Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://t6n3covesgk3"]
 
-[ext_resource type="Script" path="res://scripts/selectMap.gd" id="1_gh5xi"]
 [ext_resource type="Texture2D" uid="uid://cuneshuqc8nvh" path="res://assets/ui/menu map.jpg" id="1_ottt4"]
+[ext_resource type="Script" path="res://scripts/ui/selectMap.gd" id="1_pxt8x"]
 [ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="2_30y5y"]
 [ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="3_06ogj"]
 [ext_resource type="PackedScene" uid="uid://cbsoson37utwj" path="res://scenes/ui/map_icon.tscn" id="3_c3lo8"]
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gh5xi")
+script = ExtResource("1_pxt8x")
 
 [node name="selectMapLayer" type="CanvasLayer" parent="."]
 
@@ -27,8 +27,6 @@ expand_mode = 1
 [node name="mapIcon" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
 
 [node name="mapIcon2" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_top = 492.0
-offset_bottom = 532.0
 world_index = 1
 
 [node name="mapIcon3" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
@@ -42,44 +40,44 @@ offset_bottom = 546.0
 world_index = 3
 
 [node name="mapIcon5" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 192.0
-offset_top = 435.0
-offset_right = 232.0
-offset_bottom = 475.0
+offset_left = 190.0
+offset_top = 438.0
+offset_right = 230.0
+offset_bottom = 478.0
 world_index = 4
 
 [node name="mapIcon6" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 161.0
-offset_top = 347.0
-offset_right = 201.0
-offset_bottom = 387.0
+offset_left = 158.0
+offset_top = 345.0
+offset_right = 198.0
+offset_bottom = 385.0
 world_index = 5
 
 [node name="mapIcon7" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 161.0
-offset_top = 294.0
-offset_right = 201.0
-offset_bottom = 334.0
+offset_left = 159.0
+offset_top = 292.0
+offset_right = 199.0
+offset_bottom = 332.0
 world_index = 6
 
 [node name="mapIcon8" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 230.0
-offset_top = 232.0
-offset_right = 270.0
-offset_bottom = 272.0
+offset_left = 229.0
+offset_top = 230.0
+offset_right = 269.0
+offset_bottom = 270.0
 world_index = 7
 
 [node name="mapIcon9" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 292.0
-offset_top = 259.0
-offset_right = 332.0
-offset_bottom = 299.0
+offset_left = 290.0
+offset_top = 262.0
+offset_right = 330.0
+offset_bottom = 302.0
 world_index = 8
 
 [node name="mapIcon10" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 315.0
+offset_left = 312.0
 offset_top = 268.0
-offset_right = 355.0
+offset_right = 352.0
 offset_bottom = 308.0
 world_index = 9
 
@@ -98,22 +96,24 @@ offset_bottom = 323.0
 world_index = 11
 
 [node name="mapIcon13" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 360.0
-offset_top = 418.0
-offset_right = 400.0
-offset_bottom = 458.0
+offset_left = 359.0
+offset_top = 415.0
+offset_right = 399.0
+offset_bottom = 455.0
 world_index = 12
 
 [node name="mapIcon14" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 430.0
-offset_right = 470.0
+offset_left = 427.0
+offset_top = 490.0
+offset_right = 467.0
+offset_bottom = 530.0
 world_index = 13
 
 [node name="mapIcon15" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 376.0
-offset_top = 501.0
-offset_right = 416.0
-offset_bottom = 541.0
+offset_left = 375.0
+offset_top = 498.0
+offset_right = 415.0
+offset_bottom = 538.0
 world_index = 14
 
 [node name="playerIcon" type="TextureRect" parent="selectMapLayer/MenuMap"]
