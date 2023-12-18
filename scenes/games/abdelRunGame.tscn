@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cd1klsldjptyf"]
+
+[ext_resource type="Texture2D" uid="uid://yjllmg22mnn4" path="res://assets/easter-egg/bgPlay.png" id="1_2cd5d"]
+[ext_resource type="Texture2D" uid="uid://b0ohsv1xo48e7" path="res://assets/easter-egg/bgtoucheW.jpg" id="1_l3u58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xag84"]
+size = Vector2(1057, 79)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BgtoucheW" type="Sprite2D" parent="."]
+position = Vector2(513, 300)
+texture = ExtResource("1_l3u58")
+
+[node name="BgPlay" type="Sprite2D" parent="."]
+position = Vector2(512, 300)
+texture = ExtResource("1_2cd5d")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(510, 560.5)
+shape = SubResource("RectangleShape2D_xag84")

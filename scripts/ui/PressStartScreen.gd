@@ -1,5 +1,6 @@
 extends Control
-
+var konami_code = [KEY_UP, KEY_UP, KEY_DOWN, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_LEFT, KEY_RIGHT, KEY_B, KEY_A]
+var konami_index := 0
 
 func _ready():
 	$PressStartLayer/startingFixe.play()
@@ -7,6 +8,7 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
+	cheat_code()
 	if not $PressStartLayer/startingFixe.is_playing():
 		$PressStartLayer/startingFixe.play()
 
@@ -24,3 +26,8 @@ func _on_starting_screen_finished():
 	$PressStartLayer/startingFixe.play()
 	if $PressStartLayer/startingFixe.finished:
 		$PressStartLayer/startingFixe.play()
+
+# Cheat code
+func cheat_code():
+	if Input.is_action_pressed("ui_a") and Input.is_action_pressed("ui_b"):
+		get_tree().change_scene_to_file("res://scenes/ui/abdelRunMenu.tscn")
