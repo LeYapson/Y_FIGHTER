@@ -23,7 +23,7 @@ func _process(delta):
 	if Input.is_action_just_pressed("left_click"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
-	if player1.current_health <= 0 :
+	if player1.currentHealth <= 0 :
 		$TimerGame.stop()
 		player1.enable_controls = false
 		player2.enable_controls = false
@@ -50,11 +50,11 @@ func _process(delta):
 func _on_timer_game_timeout():
 	player1.enable_controls = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if player1.current_health > player2.current_health:
+	if player1.currentHealth > player2.current_health:
 		$LabelWinner.set_text("player 1 wins")
 		$LabelWinner.visible = true
 		winCounterP1 += 1
-	elif player2.current_health > player1.current_health:
+	elif player2.current_health > player1.currentHealth:
 		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
 		winCounterP2 += 1
