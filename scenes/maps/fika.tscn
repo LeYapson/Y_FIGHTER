@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://do4anwjf08xvn"]
+
+[ext_resource type="PackedScene" uid="uid://m5h463acptgo" path="res://assets/maps/fika.fbx" id="1_lthyx"]
+
+[node name="fika" instance=ExtResource("1_lthyx")]
