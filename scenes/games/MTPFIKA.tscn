@@ -1,11 +1,22 @@
-[gd_scene load_steps=2 format=3 uid="uid://ceb5fpag1pxa7"]
+[gd_scene load_steps=4 format=3 uid="uid://cpyy2laktwlvf"]
 
 [ext_resource type="PackedScene" uid="uid://do4anwjf08xvn" path="res://scenes/maps/fika.tscn" id="1_m3wka"]
+[ext_resource type="PackedScene" uid="uid://fgmvw0gcgwxo" path="res://scenes/games/animated_platformer_character.tscn" id="2_0j183"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcpn3"]
+size = Vector3(1, 1.1655, 1)
 
 [node name="MTPFIKA" type="Node3D"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="fika" parent="." instance=ExtResource("1_m3wka")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="fika"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fika/StaticBody3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.0871401, -0.0435517, 0)
+shape = SubResource("BoxShape3D_lcpn3")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.109387, 0.993999, 0, -0.993999, -0.109387, 0.238359, 1.00518, 0.25454)
@@ -20,5 +31,11 @@ spot_range = 1.21649
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.103125, -0.113845, 0.988132, -0.011817, 0.993499, 0.11323, -0.994598, 0, -0.103799, 3.75627, 1.00504, 0)
 
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.000304428, 0.999996, -0.00291619, 0.103799, -0.00293204, -0.994594, -0.994598, 8.32501e-08, -0.1038, -0.0549881, -1.32724, 0.0910637)
+
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.0871557, 0.996195, 0, 0.996195, -0.0871557, -1, -3.8097e-09, -4.35451e-08, 1.6767, 0.417309, 0.856445)
+transform = Transform3D(-4.37114e-08, 0.0871557, 0.996195, 0, 0.996195, -0.0871557, -1, -3.8097e-09, -4.35451e-08, 1.77404, 0.417309, 0.0609627)
+
+[node name="animated_Platformer_Character" parent="." instance=ExtResource("2_0j183")]
+transform = Transform3D(-0.1, 0, -8.74228e-09, 0, 0.1, 0, 8.74228e-09, 0, -0.1, 0.942045, 0.240675, 0)

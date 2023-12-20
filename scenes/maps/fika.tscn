@@ -3,3 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://m5h463acptgo" path="res://assets/maps/fika.fbx" id="1_lthyx"]
 
 [node name="fika" instance=ExtResource("1_lthyx")]
+
+[node name="camera1" parent="RootNode" index="15"]
+transform = Transform3D(0, 1.22465e-16, 1, 1.22465e-16, 1, -1.22465e-16, -1, 1.22465e-16, -1.49976e-32, 0.21829, 0.0466481, 0.00773025)
