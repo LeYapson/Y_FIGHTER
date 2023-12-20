@@ -12,8 +12,12 @@ const JUMP_VELOCITY = 5.0
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = $AnimationTree.get("parameters/playback")
 
-@export var max_health = 100
-@onready var current_health: int = max_health
+@export var maxHealth = 100
+@onready var currentHealth: int = maxHealth
+
+@onready var maxStamina = 100.0
+@onready var currentStamina: float = maxStamina
+
 var attack_anim = "CharacterArmature|Punch"
 var death_anim = "CharacterArmature|Death"
 var hurt_anim = "CharacterArmature|HitReact"
@@ -28,7 +32,6 @@ var attack_damage = 33
 var facing_right = false
 var is_alive = true
 var is_invulnerable = false
-var stamina = 100
 
 var enable_controls = true
 
@@ -51,17 +54,17 @@ func _physics_process(delta):
 				block()
 			
 			print(is_invulnerable)
-			print(stamina)
-			if !Input.is_action_pressed("block_p1") && stamina < 101:
+			print(currentStamina)
+			if !Input.is_action_pressed("block_p1") && currentStamina < maxStamina:
 				is_invulnerable = false
-				if stamina < 100:
-					stamina += 0.5
+				if currentStamina < maxStamina:
+					currentStamina += 0.5
 			
-			if stamina <= 0 :
+			if currentStamina <= 0 :
 				is_invulnerable = false
 				
 			wave()
-		if current_health <=0:
+		if currentHealth <=0:
 			is_alive = false
 			anim_state.travel(death_anim)
 	#		set_process_input(false)
@@ -109,22 +112,22 @@ func attack():
 	anim_state.travel(attack_anim)
 
 func block():
-	if stamina > 0 :
+	if currentStamina > 0 :
 		is_invulnerable = true
-		stamina -= 1
+		currentStamina -= 1
 
 
 func hurt(damages):
 	if is_invulnerable == true:
-		current_health -= damages / 2
+		currentHealth -= damages / 2
 		healthChanged.emit()
 	else:
-		current_health -= damages
+		currentHealth -= damages
 		healthChanged.emit()
 		anim_state.travel(hurt_anim)
 		
 func heal():
-	current_health = max_health
+	currentHealth = maxHealth
 	healthChanged.emit()
 
 func wave():
