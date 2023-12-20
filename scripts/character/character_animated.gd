@@ -14,6 +14,8 @@ var death_anim = "CharacterArmature|Death"
 @export var max_health = 100
 @onready var current_health: int = max_health
 
+var enable_controls = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass

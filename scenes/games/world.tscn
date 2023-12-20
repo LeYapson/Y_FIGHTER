@@ -149,7 +149,7 @@ script = ExtResource("8_stowy")
 player2 = NodePath("../../Character Animated")
 
 [node name="TimerGame" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 

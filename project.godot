@@ -22,6 +22,10 @@ window/size/viewport_height=600
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
 
+[dotnet]
+
+project/assembly_name="Y_FIGHTER"
+
 [input]
 
 ui_b={
