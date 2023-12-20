@@ -16,10 +16,12 @@ func _process(delta):
 func _input(event):
 	if event.is_action_pressed("ui_left") and current_world > 0:
 		current_world -= 1
+		print(current_world)
 		$selectMapLayer/MenuMap/mapName.text = world_name[current_world]
 		$selectMapLayer/MenuMap/playerIcon.global_position = worlds[current_world].global_position
 	if event.is_action_pressed("ui_right") and current_world < worlds.size() -1:
 		current_world += 1
+		print(current_world)
 		$selectMapLayer/MenuMap/mapName.text = world_name[current_world]
 		$selectMapLayer/MenuMap/playerIcon.global_position = worlds[current_world].global_position
 
