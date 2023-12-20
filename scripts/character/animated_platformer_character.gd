@@ -28,7 +28,7 @@ var attack_damage = 33
 var facing_right = false
 var is_alive = true
 var is_invulnerable = false
-var stamina = 120
+var stamina = 100
 
 var enable_controls = true
 
@@ -47,11 +47,19 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("attack_p1"):
 				attack()
 
-			if Input.is_action_pressed("block_p1") :
+			if Input.is_action_pressed("block_p1"):
 				block()
-			else:
-				is_invulnerable = false
 			
+			print(is_invulnerable)
+			print(stamina)
+			if !Input.is_action_pressed("block_p1") && stamina < 101:
+				is_invulnerable = false
+				if stamina < 100:
+					stamina += 0.5
+			
+			if stamina <= 0 :
+				is_invulnerable = false
+				
 			wave()
 		if current_health <=0:
 			is_alive = false
@@ -101,10 +109,11 @@ func attack():
 	anim_state.travel(attack_anim)
 
 func block():
-	is_invulnerable = true
-	stamina -= 1
+	if stamina > 0 :
+		is_invulnerable = true
+		stamina -= 1
 
-	
+
 func hurt(damages):
 	if is_invulnerable == true:
 		current_health -= damages / 2

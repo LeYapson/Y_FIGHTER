@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://b1m6hrkfycbcj"]
+[gd_scene load_steps=21 format=3 uid="uid://b1m6hrkfycbcj"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_mpyh5"]
 [ext_resource type="PackedScene" uid="uid://fgmvw0gcgwxo" path="res://scenes/games/animated_platformer_character.tscn" id="2_42h8v"]
+[ext_resource type="PackedScene" uid="uid://bec6xqbhky3bg" path="res://scenes/games/pause_menu.tscn" id="2_faxg0"]
 [ext_resource type="PackedScene" uid="uid://fvnf432m46dh" path="res://scenes/games/character_animated.tscn" id="3_22u1w"]
 [ext_resource type="Texture2D" uid="uid://d1h73hjfant7w" path="res://ressources/health-bar-empty.png" id="5_2nvsa"]
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="5_tqyqu"]
@@ -184,9 +185,17 @@ uppercase = true
 wait_time = 2.0
 
 [node name="Label" type="Label" parent="TimerRoundEnd"]
-offset_right = 439.0
-offset_bottom = 272.0
+offset_right = 1.0
+offset_bottom = 28.0
 theme_override_font_sizes/font_size = 20
+
+[node name="PauseMenu" parent="." instance=ExtResource("2_faxg0")]
+visible = false
+anchors_preset = -1
+anchor_left = 0.482
+anchor_top = 0.5
+anchor_right = 0.514
+anchor_bottom = 0.5
 
 [connection signal="timeout" from="TimerGame" to="." method="_on_timer_game_timeout"]
 [connection signal="timeout" from="TimerRoundEnd" to="." method="_on_timer_round_end_timeout"]

@@ -2,9 +2,14 @@ extends Node3D
 
 @onready var player1 = $animated_Platformer_Character
 @onready var player2 = $"Character Animated"
+@onready var pause_menu = $PauseMenu
+
+var paused = false
 
 var winCounterP1 = 0
 var winCounterP2 = 0
+
+var player_character_path = "res://scenes/games/animated_platformer_character.tscn"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,7 +18,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("ui_cancel"):
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		pauseMenu()
 		
 	if Input.is_action_just_pressed("left_click"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -69,4 +74,19 @@ func restart_round():
 	player2.heal()
 	$TimerGame.start()
 	$TimerRoundEnd.stop()
+	
+func pauseMenu():
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
+	if paused :
+		pause_menu.hide()
+		Engine.time_scale = 1
+		player1.enable_controls = true
+		player2.enable_controls = true
+	else:
+		pause_menu.show()
+		Engine.time_scale = 0
+		player1.enable_controls = false
+		player2.enable_controls = false
+
+	paused = !paused
 	
