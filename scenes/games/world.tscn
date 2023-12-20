@@ -1,13 +1,13 @@
 [gd_scene load_steps=20 format=3 uid="uid://b1m6hrkfycbcj"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_mpyh5"]
-[ext_resource type="PackedScene" uid="uid://fgmvw0gcgwxo" path="res://scenes/animated_platformer_character.tscn" id="2_42h8v"]
-[ext_resource type="PackedScene" uid="uid://fvnf432m46dh" path="res://scenes/character_animated.tscn" id="3_22u1w"]
+[ext_resource type="PackedScene" uid="uid://fgmvw0gcgwxo" path="res://scenes/games/animated_platformer_character.tscn" id="2_42h8v"]
+[ext_resource type="PackedScene" uid="uid://fvnf432m46dh" path="res://scenes/games/character_animated.tscn" id="3_22u1w"]
 [ext_resource type="Texture2D" uid="uid://d1h73hjfant7w" path="res://ressources/health-bar-empty.png" id="5_2nvsa"]
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="5_tqyqu"]
-[ext_resource type="Script" path="res://scripts/ProgressHealthBarP2.gd" id="6_new7g"]
 [ext_resource type="Texture2D" uid="uid://b81f8tblp45v1" path="res://ressources/bar-full.png" id="7_emm4e"]
-[ext_resource type="Script" path="res://scripts/ProgressHealthBarP1.gd" id="7_rsh3p"]
+[ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP1.gd" id="7_pskcj"]
+[ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP2.gd" id="8_stowy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ckn0m"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -129,7 +129,7 @@ texture_under = ExtResource("5_tqyqu")
 texture_over = ExtResource("5_2nvsa")
 texture_progress = ExtResource("7_emm4e")
 texture_progress_offset = Vector2(64, 0)
-script = ExtResource("7_rsh3p")
+script = ExtResource("7_pskcj")
 player1 = NodePath("../../animated_Platformer_Character")
 
 [node name="ProgressHealthBarP2" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player2")]
@@ -145,7 +145,7 @@ texture_under = ExtResource("5_tqyqu")
 texture_over = ExtResource("5_2nvsa")
 texture_progress = ExtResource("7_emm4e")
 texture_progress_offset = Vector2(64, 0)
-script = ExtResource("6_new7g")
+script = ExtResource("8_stowy")
 player2 = NodePath("../../Character Animated")
 
 [node name="TimerGame" type="Timer" parent="."]
