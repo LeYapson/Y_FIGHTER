@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://hc5tauepn14p"]
 
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="1_b0alv"]
-[ext_resource type="Script" path="res://scripts/world.gd" id="1_wx50i"]
+[ext_resource type="Script" path="res://scenes/games/hud.gd" id="1_blanv"]
 [ext_resource type="Texture2D" uid="uid://d1h73hjfant7w" path="res://ressources/health-bar-empty.png" id="2_e5osg"]
 [ext_resource type="Texture2D" uid="uid://b81f8tblp45v1" path="res://ressources/bar-full.png" id="3_x54ep"]
 [ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP1.gd" id="4_gg84o"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://fvnf432m46dh" path="res://scenes/games/character_animated.tscn" id="8_6hpug"]
 
 [node name="HUD" type="Node3D"]
-script = ExtResource("1_wx50i")
+script = ExtResource("1_blanv")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(0, -20)
@@ -74,10 +74,10 @@ theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
 uppercase = true
 
-[node name="TimerRoundEnd" type="Timer" parent="."]
+[node name="TimerRoundEnd1" type="Timer" parent="."]
 wait_time = 2.0
 
-[node name="Label" type="Label" parent="TimerRoundEnd"]
+[node name="Label" type="Label" parent="TimerRoundEnd1"]
 offset_right = 1.0
 offset_bottom = 28.0
 theme_override_font_sizes/font_size = 20

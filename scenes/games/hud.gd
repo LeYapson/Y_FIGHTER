@@ -43,12 +43,12 @@ func _process(delta):
 		roundEnded = true
 #		winCounterP1 += 1
 
-		if $TimerRoundEnd.is_stopped():
-			$TimerRoundEnd.start()
+		if $TimerRoundEnd1.is_stopped():
+			$TimerRoundEnd1.start()
 	
 #	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()))
 	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()).pad_decimals(0))
-	$TimerRoundEnd/Label.set_text(str($TimerRoundEnd.get_time_left()).pad_decimals(0))
+	$TimerRoundEnd1/Label.set_text(str($TimerRoundEnd1.get_time_left()).pad_decimals(0))
 
 func _on_timer_game_timeout():
 	player1.enable_controls = false

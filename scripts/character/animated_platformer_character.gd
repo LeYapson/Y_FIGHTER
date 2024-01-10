@@ -56,7 +56,7 @@ func _physics_process(delta):
 			
 			#print(is_invulnerable)
 			#print(currentStamina)
-			print(currentHealth)
+#			print(currentHealth)
 			if !Input.is_action_pressed("block_p1") && currentStamina < maxStamina:
 				is_invulnerable = false
 				if currentStamina < maxStamina:
