@@ -29,17 +29,17 @@ func _process(delta):
 		player2.enable_controls = false
 		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
-		winCounterP2 += 1
+#		winCounterP2 += 1
 		if $TimerRoundEnd.is_stopped():
 			$TimerRoundEnd.start()
-	
+
 	if player2.current_health <= 0 :
 		$TimerGame.stop()
 		player1.enable_controls = false
 		player2.enable_controls = false
 		$LabelWinner.set_text("player 1 wins")
 		$LabelWinner.visible = true
-		winCounterP1 += 1
+#		winCounterP1 += 1
 		if $TimerRoundEnd.is_stopped():
 			$TimerRoundEnd.start()
 	

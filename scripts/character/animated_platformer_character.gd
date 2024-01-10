@@ -29,13 +29,14 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var jumping = false
 var last_floor = true
 var attack_damage = 33
-var facing_right = false
+var facing_right = true
 var is_alive = true
 var is_invulnerable = false
 
 var enable_controls = true
 
 func _ready():
+	healthChanged.emit()
 	get_node("RootNode/CharacterArmature/Skeleton3D/ArmAttachment/Hitbox/ArmCollisionShape").disabled = true
 	anim_state.travel("CharacterArmature|Idle")
 	
@@ -53,8 +54,9 @@ func _physics_process(delta):
 			if Input.is_action_pressed("block_p1"):
 				block()
 			
-			print(is_invulnerable)
-			print(currentStamina)
+			#print(is_invulnerable)
+			#print(currentStamina)
+			print(currentHealth)
 			if !Input.is_action_pressed("block_p1") && currentStamina < maxStamina:
 				is_invulnerable = false
 				if currentStamina < maxStamina:
@@ -75,7 +77,7 @@ func get_move_input(delta):
 	var vy = velocity.y
 	velocity.y = 0.0
 	
-	var input = Input.get_vector("nullKey", "nullKey", "move_left_p1", "move_right_p1")
+	var input = Input.get_vector("nullKey", "nullKey", "move_right_p1", "move_left_p1")
 	var dir = Vector3(0, 0, input.y)
 	velocity = lerp(velocity, dir * SPEED, ACCELERATION * delta)
 	var vl = velocity * model.transform.basis
@@ -84,11 +86,11 @@ func get_move_input(delta):
 	
 func rotate_character():
 	if Input.is_action_pressed("move_right_p1") && facing_right==false:
-		model.rotate_y(deg_to_rad(180))
+		model.rotate_y(-deg_to_rad(180))
 		facing_right=true
 
 	if Input.is_action_pressed("move_left_p1") && facing_right==true:
-		model.rotate_y(-deg_to_rad(180))
+		model.rotate_y(deg_to_rad(180))
 		facing_right=false
 
 func jump():

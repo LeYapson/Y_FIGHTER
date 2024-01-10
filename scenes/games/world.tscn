@@ -113,7 +113,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.42937, 0)
 transform = Transform3D(-0.8, 0, -1.15484e-07, 0, 0.8, 0, 1.15484e-07, 0, -0.8, 0, 0, 3.61621)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5, 1.8, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5, 1.8, 0)
 current = true
 far = 20.0
 
@@ -122,10 +122,9 @@ offset = Vector2(0, -20)
 transform = Transform2D(1, 0, 0, 1, 0, -20)
 
 [node name="ProgressHealthBarP1" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player1")]
-offset_left = 20.0
-offset_top = -10.0
-offset_right = 404.0
-offset_bottom = 182.0
+offset_top = 19.0
+offset_right = 384.0
+offset_bottom = 211.0
 texture_under = ExtResource("5_tqyqu")
 texture_over = ExtResource("5_2nvsa")
 texture_progress = ExtResource("7_emm4e")
@@ -137,9 +136,9 @@ player1 = NodePath("../../animated_Platformer_Character")
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -405.0
-offset_right = -21.0
-offset_bottom = 192.0
+offset_left = -384.0
+offset_top = 21.0
+offset_bottom = 213.0
 grow_horizontal = 0
 fill_mode = 1
 texture_under = ExtResource("5_tqyqu")
