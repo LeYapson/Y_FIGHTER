@@ -60,16 +60,16 @@ libraries = {
 }
 
 [node name="startingFixe" type="VideoStreamPlayer" parent="PressStartLayer"]
-offset_right = 1024.0
-offset_bottom = 600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 stream = ExtResource("5_h07bc")
 expand = true
 
 [node name="version" type="Label" parent="PressStartLayer"]
-offset_left = 525.0
-offset_top = 535.0
-offset_right = 1023.0
-offset_bottom = 598.0
+offset_left = 1395.0
+offset_top = 986.0
+offset_right = 1912.0
+offset_bottom = 1071.0
 theme_override_fonts/font = ExtResource("3_ym7q5")
 theme_override_font_sizes/font_size = 40
 text = "ALPHA PRE RELEASE V0.3-YOGURT-X"
@@ -77,8 +77,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="StartingScreen" type="VideoStreamPlayer" parent="PressStartLayer"]
-offset_right = 1024.0
-offset_bottom = 600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 stream = ExtResource("4_hxygk")
 autoplay = true
 expand = true

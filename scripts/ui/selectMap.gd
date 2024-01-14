@@ -1,7 +1,7 @@
 extends Panel
 
-@export var world_name: Array = ["Montpellier (FIKA)","Montpellier (Terrasse)","New Montpellier","Toulouse","Bordeaux","Nantes","Rennes","Rouen","Paris","Val d'Europe","Lille","Strasbourg","Lyon","Sofia","Aix"]
-@onready var worlds: Array = [$selectMapLayer/MenuMap/mapIcon, $selectMapLayer/MenuMap/mapIcon2, $selectMapLayer/MenuMap/mapIcon3, $selectMapLayer/MenuMap/mapIcon4, $selectMapLayer/MenuMap/mapIcon5, $selectMapLayer/MenuMap/mapIcon6, $selectMapLayer/MenuMap/mapIcon7, $selectMapLayer/MenuMap/mapIcon8, $selectMapLayer/MenuMap/mapIcon9, $selectMapLayer/MenuMap/mapIcon10, $selectMapLayer/MenuMap/mapIcon11, $selectMapLayer/MenuMap/mapIcon12, $selectMapLayer/MenuMap/mapIcon13, $selectMapLayer/MenuMap/mapIcon14, $selectMapLayer/MenuMap/mapIcon15]
+@export var world_name: Array = ["Montpellier (FIKA)","SOON"]#"Montpellier (Terrasse)","New Montpellier","Toulouse","Bordeaux","Nantes","Rennes","Rouen","Paris","Val d'Europe","Lille","Strasbourg","Lyon","Sofia","Aix"]
+@onready var worlds: Array = [$selectMapLayer/MenuMap/mapIcon, $selectMapLayer/MenuMap/mapIcon2]#, $selectMapLayer/MenuMap/mapIcon3, $selectMapLayer/MenuMap/mapIcon4, $selectMapLayer/MenuMap/mapIcon5, $selectMapLayer/MenuMap/mapIcon6, $selectMapLayer/MenuMap/mapIcon7, $selectMapLayer/MenuMap/mapIcon8, $selectMapLayer/MenuMap/mapIcon9, $selectMapLayer/MenuMap/mapIcon10, $selectMapLayer/MenuMap/mapIcon11, $selectMapLayer/MenuMap/mapIcon12, $selectMapLayer/MenuMap/mapIcon13, $selectMapLayer/MenuMap/mapIcon14, $selectMapLayer/MenuMap/mapIcon15]
 var current_world: int = 0
 
 func _ready():
@@ -28,4 +28,5 @@ func _input(event):
 func _on_select_pressed():
 	# Changez vers la scène de jeu lorsque le bouton "Jouer" est pressé
 # warning-ignore:return_value_discarded
+	#var savePath = world_name[current_world]
 	get_tree().change_scene_to_file("res://scenes/ui/selectCharacter.tscn")

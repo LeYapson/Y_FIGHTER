@@ -19,101 +19,112 @@ script = ExtResource("1_pxt8x")
 [node name="selectMapLayer" type="CanvasLayer" parent="."]
 
 [node name="MenuMap" type="TextureRect" parent="selectMapLayer"]
-offset_right = 1024.0
-offset_bottom = 600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_ottt4")
-expand_mode = 1
 
 [node name="mapIcon" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
+offset_left = 632.0
+offset_top = 901.0
+offset_right = 672.0
+offset_bottom = 941.0
 
 [node name="mapIcon2" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
+offset_left = 632.0
+offset_top = 901.0
+offset_right = 672.0
+offset_bottom = 941.0
 world_index = 1
 
 [node name="mapIcon3" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
+offset_left = 632.0
+offset_top = 901.0
+offset_right = 672.0
+offset_bottom = 941.0
 world_index = 2
 
 [node name="mapIcon4" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 267.0
-offset_top = 506.0
-offset_right = 307.0
-offset_bottom = 546.0
+offset_left = 518.0
+offset_top = 928.0
+offset_right = 558.0
+offset_bottom = 968.0
 world_index = 3
 
 [node name="mapIcon5" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 190.0
-offset_top = 438.0
-offset_right = 230.0
-offset_bottom = 478.0
+offset_left = 375.0
+offset_top = 804.0
+offset_right = 415.0
+offset_bottom = 844.0
 world_index = 4
 
 [node name="mapIcon6" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 158.0
-offset_top = 345.0
-offset_right = 198.0
-offset_bottom = 385.0
+offset_left = 316.0
+offset_top = 637.0
+offset_right = 356.0
+offset_bottom = 677.0
 world_index = 5
 
 [node name="mapIcon7" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 159.0
-offset_top = 292.0
-offset_right = 199.0
-offset_bottom = 332.0
+offset_left = 315.0
+offset_top = 541.0
+offset_right = 355.0
+offset_bottom = 581.0
 world_index = 6
 
 [node name="mapIcon8" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 229.0
-offset_top = 230.0
-offset_right = 269.0
-offset_bottom = 270.0
+offset_left = 446.0
+offset_top = 430.0
+offset_right = 486.0
+offset_bottom = 470.0
 world_index = 7
 
 [node name="mapIcon9" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 290.0
-offset_top = 262.0
-offset_right = 330.0
-offset_bottom = 302.0
+offset_left = 561.0
+offset_top = 486.0
+offset_right = 601.0
+offset_bottom = 526.0
 world_index = 8
 
 [node name="mapIcon10" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 312.0
-offset_top = 268.0
-offset_right = 352.0
-offset_bottom = 308.0
+offset_left = 603.0
+offset_top = 500.0
+offset_right = 643.0
+offset_bottom = 540.0
 world_index = 9
 
 [node name="mapIcon11" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 298.0
-offset_top = 169.0
-offset_right = 338.0
-offset_bottom = 209.0
+offset_left = 575.0
+offset_top = 319.0
+offset_right = 615.0
+offset_bottom = 359.0
 world_index = 10
 
 [node name="mapIcon12" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 459.0
-offset_top = 283.0
-offset_right = 499.0
-offset_bottom = 323.0
+offset_left = 877.0
+offset_top = 527.0
+offset_right = 917.0
+offset_bottom = 567.0
 world_index = 11
 
 [node name="mapIcon13" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 359.0
-offset_top = 415.0
-offset_right = 399.0
-offset_bottom = 455.0
+offset_left = 689.0
+offset_top = 764.0
+offset_right = 729.0
+offset_bottom = 804.0
 world_index = 12
 
 [node name="mapIcon14" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 427.0
-offset_top = 490.0
-offset_right = 467.0
-offset_bottom = 530.0
+offset_left = 820.0
+offset_top = 900.0
+offset_right = 860.0
+offset_bottom = 940.0
 world_index = 13
 
 [node name="mapIcon15" parent="selectMapLayer/MenuMap" instance=ExtResource("3_c3lo8")]
-offset_left = 375.0
-offset_top = 498.0
-offset_right = 415.0
-offset_bottom = 538.0
+offset_left = 720.0
+offset_top = 914.0
+offset_right = 760.0
+offset_bottom = 954.0
 world_index = 14
 
 [node name="playerIcon" type="TextureRect" parent="selectMapLayer/MenuMap"]
@@ -125,20 +136,31 @@ expand_mode = 3
 
 [node name="mapName" type="Label" parent="selectMapLayer/MenuMap"]
 layout_mode = 0
-offset_left = 577.0
-offset_top = 116.0
-offset_right = 986.0
-offset_bottom = 176.0
+offset_left = 1308.0
+offset_top = 228.0
+offset_right = 1717.0
+offset_bottom = 288.0
 theme_override_fonts/font = ExtResource("4_e8oth")
 theme_override_font_sizes/font_size = 60
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="version" type="Label" parent="selectMapLayer/MenuMap"]
+offset_left = 1407.0
+offset_top = 994.0
+offset_right = 1905.0
+offset_bottom = 1057.0
+theme_override_fonts/font = ExtResource("4_e8oth")
+theme_override_font_sizes/font_size = 40
+text = "ALPHA PRE RELEASE V0.3-YOGURT-X"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Select" type="TextureButton" parent="selectMapLayer"]
-offset_left = 655.0
-offset_top = 458.0
-offset_right = 915.0
-offset_bottom = 538.0
+offset_left = 1393.0
+offset_top = 889.0
+offset_right = 1653.0
+offset_bottom = 969.0
 texture_normal = ExtResource("2_30y5y")
 texture_pressed = ExtResource("3_06ogj")
 texture_hover = ExtResource("3_06ogj")

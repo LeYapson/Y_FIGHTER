@@ -10,8 +10,8 @@ script = ExtResource("1_kpjwl")
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 layout_mode = 0
-offset_right = 1024.0
-offset_bottom = 600.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 stream = ExtResource("2_5ghc8")
 autoplay = true
 expand = true
