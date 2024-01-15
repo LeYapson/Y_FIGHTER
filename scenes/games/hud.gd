@@ -30,12 +30,14 @@ func _process(delta):
 		player2.enable_controls = false
 		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
+		
 #		winCounterP2 += 1
 		if $TimerRoundEnd.is_stopped():
 			$TimerRoundEnd.start()
 
 	if player2.current_health <= 0 :
 		$TimerGame.stop()
+		Engine.time_scale = 0.5
 		player1.enable_controls = false
 		player2.enable_controls = false
 		$LabelWinner.set_text("player 1 wins")
@@ -43,12 +45,12 @@ func _process(delta):
 		roundEnded = true
 #		winCounterP1 += 1
 
-		if $TimerRoundEnd1.is_stopped():
-			$TimerRoundEnd1.start()
+		if $TimerRoundEnd.is_stopped():
+			$TimerRoundEnd.start()
 	
 #	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()))
 	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()).pad_decimals(0))
-	$TimerRoundEnd1/Label.set_text(str($TimerRoundEnd1.get_time_left()).pad_decimals(0))
+	$TimerRoundEnd/Label.set_text(str($TimerRoundEnd.get_time_left()).pad_decimals(0))
 
 func _on_timer_game_timeout():
 	player1.enable_controls = false
@@ -77,6 +79,7 @@ func restart_round():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player1.heal()
 	player2.heal()
+	Engine.time_scale = 1
 	$TimerGame.start()
 	$TimerRoundEnd.stop()
 	
