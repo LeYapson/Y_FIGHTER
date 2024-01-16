@@ -146,6 +146,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="version" type="Label" parent="selectMapLayer/MenuMap"]
+layout_mode = 0
 offset_left = 1407.0
 offset_top = 994.0
 offset_right = 1905.0

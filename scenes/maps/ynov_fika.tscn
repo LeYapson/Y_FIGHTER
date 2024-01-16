@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://cxhtlltwggya0"]
+
+[ext_resource type="PackedScene" uid="uid://coh0swh8cx64t" path="res://assets/maps/Ynov_Fika.fbx" id="1_c6flw"]
+
+[node name="Ynov_Fika" instance=ExtResource("1_c6flw")]
+
+[node name="camera1" type="Camera3D" parent="." index="1"]
+transform = Transform3D(0, 1.22465e-16, 1, 1.22465e-16, 1, -1.22465e-16, -1, 1.22465e-16, -1.49977e-32, 0.37, 0.055, 0.008)
+fov = 37.8492
+near = 0.1
+far = 10000.0

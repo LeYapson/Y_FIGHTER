@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://cpyy2laktwlvf"]
+[gd_scene load_steps=17 format=3 uid="uid://cpyy2laktwlvf"]
 
 [ext_resource type="PackedScene" uid="uid://do4anwjf08xvn" path="res://scenes/maps/fika.tscn" id="1_m3wka"]
+[ext_resource type="Script" path="res://scripts/game/MTPFIKA.gd" id="1_tftiq"]
+[ext_resource type="AudioStream" uid="uid://dntysb7r175g6" path="res://assets/sounds/FAR OUT VIP.mp3" id="3_3ag46"]
 [ext_resource type="PackedScene" uid="uid://hc5tauepn14p" path="res://scenes/games/hud.tscn" id="3_j1560"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_45s4b"]
@@ -41,6 +43,7 @@ data = PackedVector3Array(1.1375, 0, 2, -1.1375, 0, 2, 1.1375, 0, -2, -1.1375, 0
 
 [node name="MTPFIKA" type="Node3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+script = ExtResource("1_tftiq")
 
 [node name="fika" parent="." instance=ExtResource("1_m3wka")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
@@ -117,3 +120,7 @@ shape = SubResource("ConcavePolygonShape3D_nfo2b")
 
 [node name="HUD" parent="." instance=ExtResource("3_j1560")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.741, 0.0746827, -0.333)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_3ag46")
+volume_db = -25.0

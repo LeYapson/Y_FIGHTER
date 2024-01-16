@@ -1,7 +1,7 @@
 extends Panel
 
 func _on_Play_pressed():
-		get_tree().change_scene_to_file("res://scenes/ui/selectMap.tscn")
+		get_tree().change_scene_to_file("res://scenes/games/MTPFIKA.tscn")
 
 func _on_Training_pressed():
 	# Changez vers la scène d'options lorsque le bouton "Options" est pressé
