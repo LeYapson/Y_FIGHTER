@@ -116,4 +116,4 @@ mesh = SubResource("PlaneMesh_i8sva")
 shape = SubResource("ConcavePolygonShape3D_nfo2b")
 
 [node name="HUD" parent="." instance=ExtResource("3_j1560")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.741, 0.0746827, -0.333)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.74144, 0.139249, -0.333333)

@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var player1 = $animated_Platformer_Character
-@onready var player2 = $"Character Animated"
+@onready var player1 = $Player1
+@onready var player2 = $Player2
 @onready var pause_menu = $PauseMenu
 
 var paused = false
@@ -34,7 +34,7 @@ func _process(delta):
 		if $TimerRoundEnd.is_stopped():
 			$TimerRoundEnd.start()
 
-	if player2.current_health <= 0 :
+	if player2.currentHealth <= 0 :
 		$TimerGame.stop()
 		player1.enable_controls = false
 		player2.enable_controls = false
@@ -53,11 +53,11 @@ func _process(delta):
 func _on_timer_game_timeout():
 	player1.enable_controls = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if player1.currentHealth > player2.current_health:
+	if player1.currentHealth > player2.currentHealth:
 		$LabelWinner.set_text("player 1 wins")
 		$LabelWinner.visible = true
 		winCounterP1 += 1
-	elif player2.current_health > player1.currentHealth:
+	elif player2.currentHealth > player1.currentHealth:
 		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
 		winCounterP2 += 1

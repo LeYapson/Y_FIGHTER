@@ -25,7 +25,7 @@ texture_over = ExtResource("2_e5osg")
 texture_progress = ExtResource("3_x54ep")
 texture_progress_offset = Vector2(64, 0)
 script = ExtResource("4_gg84o")
-player1 = NodePath("../../animated_Platformer_Character")
+player1 = NodePath("../../Player1")
 
 [node name="ProgressHealthBarP2" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player2")]
 anchors_preset = 1
@@ -40,7 +40,7 @@ texture_over = ExtResource("2_e5osg")
 texture_progress = ExtResource("3_x54ep")
 texture_progress_offset = Vector2(64, 0)
 script = ExtResource("5_p5lxg")
-player2 = NodePath("../../Character Animated")
+player2 = NodePath("../../Player2")
 
 [node name="TimerGame" type="Timer" parent="."]
 wait_time = 60.0
@@ -90,9 +90,10 @@ anchor_top = 0.5
 anchor_right = 0.514
 anchor_bottom = 0.5
 
-[node name="animated_Platformer_Character" parent="." instance=ExtResource("7_oiqbu")]
+[node name="Player1" parent="." instance=ExtResource("7_oiqbu")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 5)
 
-[node name="Character Animated" parent="." instance=ExtResource("8_6hpug")]
+[node name="Player2" parent="." instance=ExtResource("8_6hpug")]
 
+[connection signal="timeout" from="TimerGame" to="." method="_on_timer_game_timeout"]
 [connection signal="timeout" from="TimerRoundEnd" to="." method="_on_timer_round_end_timeout"]

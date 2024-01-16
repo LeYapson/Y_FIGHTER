@@ -118,7 +118,6 @@ current = true
 far = 20.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 offset = Vector2(0, -20)
 transform = Transform2D(1, 0, 0, 1, 0, -20)
 

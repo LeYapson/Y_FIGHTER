@@ -1,7 +1,7 @@
 extends Node3D
 
-@onready var player1 = $animated_Platformer_Character
-@onready var player2 = $"Character Animated"
+@onready var player1 = $Player1
+@onready var player2 = $Player2
 @onready var pause_menu = $PauseMenu
 
 var paused = false
@@ -26,21 +26,23 @@ func _process(delta):
 		
 	if player1.currentHealth <= 0 :
 		$TimerGame.stop()
-		player1.enable_controls = false
-		player2.enable_controls = false
-		$LabelWinner.set_text("player 2 wins")
-		$LabelWinner.visible = true
-		
-#		winCounterP2 += 1
-		if $TimerRoundEnd.is_stopped():
-			$TimerRoundEnd.start()
-
-	if player2.current_health <= 0 :
-		$TimerGame.stop()
 		Engine.time_scale = 0.5
 		player1.enable_controls = false
 		player2.enable_controls = false
 		$LabelWinner.set_text("player 1 wins")
+		$LabelWinner.visible = true
+		roundEnded = true
+#		winCounterP1 += 1
+
+		if $TimerRoundEnd.is_stopped():
+			$TimerRoundEnd.start()
+
+	if player2.currentHealth <= 0 :
+		$TimerGame.stop()
+		Engine.time_scale = 0.5
+		player1.enable_controls = false
+		player2.enable_controls = false
+		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
 		roundEnded = true
 #		winCounterP1 += 1
@@ -55,11 +57,11 @@ func _process(delta):
 func _on_timer_game_timeout():
 	player1.enable_controls = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	if player1.currentHealth > player2.current_health:
+	if player1.currentHealth > player2.currentHealth:
 		$LabelWinner.set_text("player 1 wins")
 		$LabelWinner.visible = true
 		winCounterP1 += 1
-	elif player2.current_health > player1.currentHealth:
+	elif player2.currentHealth > player1.currentHealth:
 		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
 		winCounterP2 += 1
@@ -70,12 +72,12 @@ func _on_timer_game_timeout():
 	$TimerRoundEnd.start()
 
 func _on_timer_round_end_timeout():
-	print('i')
 	restart_round()
 
 func restart_round():
 	$LabelWinner.visible = false
 	player1.enable_controls = true
+	player2.enable_controls = true
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	player1.heal()
 	player2.heal()

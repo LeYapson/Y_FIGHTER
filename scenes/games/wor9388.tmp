@@ -108,6 +108,7 @@ shape = SubResource("ConcavePolygonShape3D_070dp")
 
 [node name="Player2" parent="." instance=ExtResource("3_22u1w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+maxHealth = 100
 
 [node name="Player1" parent="." instance=ExtResource("2_42h8v")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.42937, 4.39374)
@@ -118,7 +119,6 @@ current = true
 far = 20.0
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 offset = Vector2(0, -20)
 transform = Transform2D(1, 0, 0, 1, 0, -20)
 

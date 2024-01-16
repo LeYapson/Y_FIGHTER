@@ -53,10 +53,7 @@ func _physics_process(delta):
 
 			if Input.is_action_pressed("block_p1"):
 				block()
-			
-			#print(is_invulnerable)
-			#print(currentStamina)
-#			print(currentHealth)
+
 			if !Input.is_action_pressed("block_p1") && currentStamina < maxStamina:
 				is_invulnerable = false
 				if currentStamina < maxStamina:
@@ -69,8 +66,6 @@ func _physics_process(delta):
 		if currentHealth <=0:
 			is_alive = false
 			anim_state.travel(death_anim)
-	#		set_process_input(false)
-	#		$CollisionShape3D.disabled = true
 
 func get_move_input(delta):
 	
@@ -94,7 +89,7 @@ func rotate_character():
 		facing_right=false
 
 func jump():
-	if is_on_floor() and Input.is_action_pressed("jump_p1"):
+	if is_on_floor() and Input.is_action_just_pressed("jump_p1"):
 		jumping = true
 		velocity.y = JUMP_VELOCITY
 		anim_tree.set("parameters/conditions/jumping", true)
@@ -141,7 +136,7 @@ func _unhandled_input(event):
 	pass
 
 func _on_hitbox_body_entered(body):
-	if body.is_in_group("enemy") and body.has_method("hurt"):
+	if body.is_in_group("Player2") and body.has_method("hurt"):
 		body.hurt(attack_damage)
 
 func _on_timer_attack_hitbox_timeout():

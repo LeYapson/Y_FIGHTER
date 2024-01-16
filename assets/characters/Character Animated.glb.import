@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Character Animated.glb-c52236349d40a99df421ad
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type="CharacterBody3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
