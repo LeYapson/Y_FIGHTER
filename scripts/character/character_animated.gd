@@ -51,10 +51,10 @@ func _physics_process(delta):
 			if Input.is_action_just_pressed("attack_p2"):
 				attack()
 
-			if Input.is_action_pressed("block_p1"):
+			if Input.is_action_pressed("block_p2"):
 				block()
 
-			if !Input.is_action_pressed("block_p1") && currentStamina < maxStamina:
+			if !Input.is_action_pressed("block_p2") && currentStamina < maxStamina:
 				is_invulnerable = false
 				if currentStamina < maxStamina:
 					currentStamina += 0.5

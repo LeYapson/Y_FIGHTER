@@ -97,11 +97,13 @@ func pauseMenu():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
 	if paused :
 		pause_menu.hide()
+#		get_tree().paused = false
 		Engine.time_scale = 1
 		player1.enable_controls = true
 		player2.enable_controls = true
 	else:
 		pause_menu.show()
+#		get_tree().paused = true
 		Engine.time_scale = 0
 		player1.enable_controls = false
 		player2.enable_controls = false

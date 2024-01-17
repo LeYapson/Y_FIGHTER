@@ -7279,7 +7279,7 @@ bones/6/parent = 5
 bones/6/rest = Transform3D(1, 4.92774e-08, -1.66351e-06, 2.84529e-08, 0.998909, 0.0466942, 1.664e-06, -0.0466942, 0.998909, 7.31859e-14, 0.00325253, 1.9815e-10)
 bones/6/enabled = true
 bones/6/position = Vector3(7.31859e-14, 0.00325253, 1.9815e-10)
-bones/6/rotation = Quaternion(-0.0383621, -0.020117, 0.0274127, 0.998685)
+bones/6/rotation = Quaternion(-0.049349, -0.0211029, 0.0210619, 0.998336)
 bones/6/scale = Vector3(1, 1, 1)
 bones/7/name = "Neck"
 bones/7/parent = 6
@@ -7293,7 +7293,7 @@ bones/8/parent = 7
 bones/8/rest = Transform3D(1, 3.17232e-08, -0.00055095, 2.33566e-05, 0.999098, 0.0424508, 0.000550454, -0.0424508, 0.999098, -3.58433e-13, 0.000987324, 2.18747e-10)
 bones/8/enabled = true
 bones/8/position = Vector3(-3.58433e-13, 0.000987324, 2.18747e-10)
-bones/8/rotation = Quaternion(-0.0116327, -0.244108, 0.0262958, 0.969322)
+bones/8/rotation = Quaternion(0.00209021, -0.243958, 0.0299298, 0.969322)
 bones/8/scale = Vector3(1, 1, 1)
 bones/9/name = "NurbsPath.001"
 bones/9/parent = 8
@@ -7321,14 +7321,14 @@ bones/12/parent = 11
 bones/12/rest = Transform3D(0.367925, 0.789982, 0.490468, 0.414547, -0.611502, 0.673955, 0.832335, -0.0446423, -0.552472, -3.86499e-10, 0.00197461, -4.01292e-11)
 bones/12/enabled = true
 bones/12/position = Vector3(-3.86499e-10, 0.00197461, -4.01292e-11)
-bones/12/rotation = Quaternion(0.7326, 0.335293, 0.415656, -0.422025)
+bones/12/rotation = Quaternion(0.734096, 0.34165, 0.418757, -0.411121)
 bones/12/scale = Vector3(1, 1, 0.999999)
 bones/13/name = "LowerArm.L"
 bones/13/parent = 12
 bones/13/rest = Transform3D(0.839041, 0.251234, 0.482589, -0.458706, 0.80364, 0.379147, -0.292573, -0.539486, 0.78953, 2.04891e-10, 0.00392233, 1.49012e-10)
 bones/13/enabled = true
 bones/13/position = Vector3(2.04891e-10, 0.00392233, 1.49012e-10)
-bones/13/rotation = Quaternion(-0.196976, 0.100096, -0.191283, 0.956343)
+bones/13/rotation = Quaternion(-0.199374, 0.101668, -0.200924, 0.9537)
 bones/13/scale = Vector3(1, 1, 1)
 bones/14/name = "Fist.L"
 bones/14/parent = 13
@@ -7398,7 +7398,7 @@ bones/23/parent = 22
 bones/23/rest = Transform3D(0.832426, -0.246478, -0.496301, 0.458852, 0.808734, 0.367973, 0.310678, -0.53404, 0.786308, 3.72529e-11, 0.00392234, 1.02445e-10)
 bones/23/enabled = true
 bones/23/position = Vector3(3.72529e-11, 0.00392234, 1.02445e-10)
-bones/23/rotation = Quaternion(-0.0494943, 0.0360835, 0.61916, 0.782873)
+bones/23/rotation = Quaternion(-0.0565543, 0.0100668, 0.575629, 0.815691)
 bones/23/scale = Vector3(1, 1, 1)
 bones/24/name = "Fist.R"
 bones/24/parent = 23
@@ -7454,14 +7454,14 @@ bones/31/parent = 3
 bones/31/rest = Transform3D(0.99919, 0.0258446, -0.0308342, 0.0174272, -0.968786, -0.247282, -0.0362628, 0.246546, -0.968447, 0.00162965, 0.000187981, -0.000914239)
 bones/31/enabled = true
 bones/31/position = Vector3(0.00162965, 0.000187981, -0.000914239)
-bones/31/rotation = Quaternion(0.964863, 0.177549, -0.159203, 0.110322)
+bones/31/rotation = Quaternion(0.966751, 0.173101, -0.161229, 0.0971303)
 bones/31/scale = Vector3(1, 1, 0.999995)
 bones/32/name = "LowerLeg.L"
 bones/32/parent = 31
 bones/32/rest = Transform3D(0.999869, -0.0135216, 0.00888644, 0.0161526, 0.866292, -0.499278, -0.000947187, 0.499356, 0.866398, -1.76951e-10, 0.00552047, -4.74975e-10)
 bones/32/enabled = true
 bones/32/position = Vector3(-1.76951e-10, 0.00552047, -4.74975e-10)
-bones/32/rotation = Quaternion(0.418704, 0.00381192, 0.0071361, 0.908087)
+bones/32/rotation = Quaternion(0.390443, 0.00358959, 0.00725048, 0.920592)
 bones/32/scale = Vector3(1, 1, 1)
 bones/33/name = "LowerLeg.L_end"
 bones/33/parent = 32
@@ -7475,14 +7475,14 @@ bones/34/parent = 3
 bones/34/rest = Transform3D(0.998908, -0.0277478, 0.0375624, -0.0176092, -0.968766, -0.24735, 0.0432528, 0.24642, -0.968193, -0.00164648, 0.000187981, -0.000914242)
 bones/34/enabled = true
 bones/34/position = Vector3(-0.00164648, 0.000187981, -0.000914242)
-bones/34/rotation = Quaternion(0.956044, -0.0582622, -0.0027135, 0.287363)
+bones/34/rotation = Quaternion(0.95978, -0.0575929, -0.00231395, 0.274773)
 bones/34/scale = Vector3(1, 1, 0.999995)
 bones/35/name = "LowerLeg.R"
 bones/35/parent = 34
 bones/35/rest = Transform3D(0.999869, 0.0135217, -0.00888638, -0.0161526, 0.866293, -0.499276, 0.000947163, 0.499354, 0.866399, -3.35276e-10, 0.00552047, 3.35276e-10)
 bones/35/enabled = true
 bones/35/position = Vector3(-3.35276e-10, 0.00552047, 3.35276e-10)
-bones/35/rotation = Quaternion(0.509871, -0.00452556, -0.00670629, 0.860213)
+bones/35/rotation = Quaternion(0.487126, -0.00434805, -0.00682271, 0.873294)
 bones/35/scale = Vector3(1, 1, 1)
 bones/36/name = "LowerLeg.R_end"
 bones/36/parent = 35
@@ -7535,7 +7535,7 @@ bones/42/rotation = Quaternion(5.29396e-23, 1.58819e-22, 0, 1)
 bones/42/scale = Vector3(1, 1, 1)
 
 [node name="NurbsPath_001" type="BoneAttachment3D" parent="RootNode/CharacterArmature/Skeleton3D"]
-transform = Transform3D(0.998326, -0.0120606, -0.0565618, 0.00282066, 0.987004, -0.160672, 0.0577645, 0.160244, 0.985386, 0.000558643, 0.00114136, -0.000868054)
+transform = Transform3D(0.998312, -0.0132275, -0.0565544, 0.00380319, 0.986519, -0.1636, 0.057956, 0.163109, 0.984904, 0.000558584, 0.00132893, -0.000838691)
 bone_name = "NurbsPath.001"
 bone_idx = 9
 
@@ -7552,7 +7552,7 @@ mesh = SubResource("ArrayMesh_t65rs")
 skin = SubResource("Skin_wxnmi")
 
 [node name="ArmAttachment" type="BoneAttachment3D" parent="RootNode/CharacterArmature/Skeleton3D"]
-transform = Transform3D(-0.479728, 0.721401, -0.499441, -0.51149, -0.692425, -0.508848, -0.712909, 0.0113503, 0.701165, -0.00045862, -0.0100146, 0.0154209)
+transform = Transform3D(-0.56922, 0.679415, -0.463016, -0.458103, -0.729722, -0.507589, -0.682737, -0.0768212, 0.726615, -0.000686668, -0.0102084, 0.015043)
 bone_name = "Fist1.R"
 bone_idx = 25
 
@@ -7574,7 +7574,7 @@ active = true
 parameters/IdleWalkRun/blend_position = -0.003003
 
 [node name="TimerAttackHitbox" type="Timer" parent="."]
-wait_time = 0.55
+wait_time = 0.4
 
 [connection signal="body_entered" from="RootNode/CharacterArmature/Skeleton3D/ArmAttachment/Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="timeout" from="TimerAttackHitbox" to="." method="_on_timer_attack_hitbox_timeout"]
