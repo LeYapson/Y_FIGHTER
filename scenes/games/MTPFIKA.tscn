@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cpyy2laktwlvf"]
+[gd_scene load_steps=19 format=3 uid="uid://cpyy2laktwlvf"]
 
 [ext_resource type="PackedScene" uid="uid://do4anwjf08xvn" path="res://scenes/maps/fika.tscn" id="1_m3wka"]
 [ext_resource type="Script" path="res://scripts/game/MTPFIKA.gd" id="1_tftiq"]
@@ -40,6 +40,12 @@ size = Vector2(2.275, 4)
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_nfo2b"]
 data = PackedVector3Array(1.1375, 0, 2, -1.1375, 0, 2, 1.1375, 0, -2, -1.1375, 0, 2, -1.1375, 0, -2, 1.1375, 0, -2)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_c5luc"]
+size = Vector2(1.2, 4)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jm1si"]
+data = PackedVector3Array(0.6, 0, 2, -0.6, 0, 2, 0.6, 0, -2, -0.6, 0, 2, -0.6, 0, -2, 0.6, 0, -2)
 
 [node name="MTPFIKA" type="Node3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
@@ -118,8 +124,18 @@ mesh = SubResource("PlaneMesh_i8sva")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_nfo2b")
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 1, 0.6, 0)
+visible = false
+mesh = SubResource("PlaneMesh_c5luc")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_jm1si")
+
 [node name="HUD" parent="." instance=ExtResource("3_j1560")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.741, 0.0746827, -0.333)
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.741, 0.078, -0.333)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_3ag46")

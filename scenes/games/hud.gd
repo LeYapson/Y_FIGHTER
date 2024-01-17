@@ -14,7 +14,8 @@ var player_character_path = "res://scenes/games/animated_platformer_character.ts
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	player1.enable_controls = false
+	player2.enable_controls = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -30,7 +31,7 @@ func _process(delta):
 		Engine.time_scale = 0.5
 		player1.enable_controls = false
 		player2.enable_controls = false
-		$LabelWinner.set_text("player 1 wins")
+		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
 		roundEnded = true
 #		winCounterP1 += 1
@@ -43,7 +44,7 @@ func _process(delta):
 		Engine.time_scale = 0.5
 		player1.enable_controls = false
 		player2.enable_controls = false
-		$LabelWinner.set_text("player 2 wins")
+		$LabelWinner.set_text("player 1 wins")
 		$LabelWinner.visible = true
 		roundEnded = true
 #		winCounterP1 += 1
@@ -52,11 +53,19 @@ func _process(delta):
 			$TimerRoundEnd.start()
 	
 #	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()))
+	if str($TimerRoundStart.get_time_left()).pad_decimals(0) > '0':
+		$TimerRoundStart/Label.set_text(str($TimerRoundStart.get_time_left()).pad_decimals(0))
+	else:
+		$TimerRoundStart/Label.set_text('GO')
+		
+		
+	
 	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()).pad_decimals(0))
-	$TimerRoundEnd/Label.set_text(str($TimerRoundEnd.get_time_left()).pad_decimals(0))
+#	$TimerRoundEnd/Label.set_text(str($TimerRoundEnd.get_time_left()).pad_decimals(0))
 
 func _on_timer_game_timeout():
 	player1.enable_controls = false
+	player2.enable_controls = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	if player1.currentHealth > player2.currentHealth:
 		$LabelWinner.set_text("player 1 wins")
@@ -98,6 +107,11 @@ func pauseMenu():
 		Engine.time_scale = 0
 		player1.enable_controls = false
 		player2.enable_controls = false
-
 	paused = !paused
 	
+func _on_timer_round_start_timeout():
+	$TimerGame.start()
+	$TimerGame/LabelTimerGame.visible = true
+	$TimerRoundStart/Label.visible = false
+	player1.enable_controls = true
+	player2.enable_controls = true

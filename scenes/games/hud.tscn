@@ -42,12 +42,35 @@ texture_progress_offset = Vector2(64, 0)
 script = ExtResource("5_p5lxg")
 player2 = NodePath("../../Player2")
 
-[node name="TimerGame" type="Timer" parent="."]
-wait_time = 60.0
+[node name="TimerRoundStart" type="Timer" parent="."]
+wait_time = 4.0
 one_shot = true
 autostart = true
 
+[node name="Label" type="Label" parent="TimerRoundStart"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -124.5
+offset_right = 437.0
+offset_bottom = 124.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="TimerGame" type="Timer" parent="."]
+wait_time = 61.0
+one_shot = true
+
 [node name="LabelTimerGame" type="Label" parent="TimerGame"]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -55,29 +78,27 @@ offset_left = -41.0
 offset_right = 41.0
 offset_bottom = 41.0
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 horizontal_alignment = 1
 
 [node name="LabelWinner" type="Label" parent="."]
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -260.0
-offset_top = -513.0
-offset_right = 318.0
-offset_bottom = -82.0
+offset_left = -289.0
+offset_right = 289.0
+offset_bottom = 238.0
 grow_horizontal = 2
-grow_vertical = 2
 theme_override_font_sizes/font_size = 100
 horizontal_alignment = 1
+vertical_alignment = 1
 uppercase = true
 
 [node name="TimerRoundEnd" type="Timer" parent="."]
 wait_time = 2.0
 
 [node name="Label" type="Label" parent="TimerRoundEnd"]
+visible = false
 offset_right = 1.0
 offset_bottom = 28.0
 theme_override_font_sizes/font_size = 20
@@ -95,5 +116,6 @@ transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 5)
 
 [node name="Player2" parent="." instance=ExtResource("8_6hpug")]
 
+[connection signal="timeout" from="TimerRoundStart" to="." method="_on_timer_round_start_timeout"]
 [connection signal="timeout" from="TimerGame" to="." method="_on_timer_game_timeout"]
 [connection signal="timeout" from="TimerRoundEnd" to="." method="_on_timer_round_end_timeout"]

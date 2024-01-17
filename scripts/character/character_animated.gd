@@ -28,7 +28,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 var jumping = false
 var last_floor = true
-var attack_damage = 33
+var attack_damage = 10
 var facing_right = false
 var is_alive = true
 var is_invulnerable = false
@@ -64,7 +64,7 @@ func _physics_process(delta):
 				
 			wave()
 		if currentHealth <=0:
-			is_alive = false
+#			is_alive = false
 			anim_state.travel(death_anim)
 
 func get_move_input(delta):
@@ -125,6 +125,7 @@ func hurt(damages):
 		
 func heal():
 	currentHealth = maxHealth
+	hurt(0)
 	hc.emit()
 
 func wave():
