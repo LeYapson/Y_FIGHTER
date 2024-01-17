@@ -58,8 +58,6 @@ func _process(delta):
 	else:
 		$TimerRoundStart/Label.set_text('GO')
 		
-		
-	
 	$TimerGame/LabelTimerGame.set_text(str($TimerGame.get_time_left()).pad_decimals(0))
 #	$TimerRoundEnd/Label.set_text(str($TimerRoundEnd.get_time_left()).pad_decimals(0))
 

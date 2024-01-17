@@ -57,7 +57,7 @@ func _on_timer_game_timeout():
 		$LabelWinner.set_text("player 1 wins")
 		$LabelWinner.visible = true
 		winCounterP1 += 1
-	elif player2.currentHealth > player1.currentHealth:
+	elif player2.currentHealtha > player1.currentHealth:
 		$LabelWinner.set_text("player 2 wins")
 		$LabelWinner.visible = true
 		winCounterP2 += 1
