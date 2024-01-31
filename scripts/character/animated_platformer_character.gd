@@ -3,6 +3,7 @@ extends CharacterBody3D
 class_name Player1
 
 signal healthChanged
+signal staminaChanged
 
 const SPEED = 5.0
 const ACCELERATION = 4.0
@@ -15,7 +16,7 @@ const JUMP_VELOCITY = 5.0
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 
-@onready var maxStamina = 100.0
+@export var maxStamina = 100.0
 @onready var currentStamina: float = maxStamina
 
 var attackeAnim = "CharacterArmature|Punch"
@@ -37,6 +38,7 @@ var enableControls = true
 
 func _ready():
 	healthChanged.emit()
+	staminaChanged.emit()
 	get_node("RootNode/CharacterArmature/Skeleton3D/ArmAttachment/Hitbox/ArmCollisionShape").disabled = true
 	animState.travel("CharacterArmature|Idle")
 	
@@ -58,6 +60,8 @@ func _physics_process(delta):
 				isInvulnerable = false
 				if currentStamina < maxStamina:
 					currentStamina += 0.5
+					staminaChanged.emit()
+					
 			
 			if currentStamina <= 0 :
 				isInvulnerable = false
@@ -111,6 +115,7 @@ func block():
 	if currentStamina > 0 :
 		isInvulnerable = true
 		currentStamina -= 1
+		staminaChanged.emit()
 
 
 func hurt(damages):

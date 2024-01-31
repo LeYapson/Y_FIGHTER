@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hc5tauepn14p"]
+[gd_scene load_steps=12 format=3 uid="uid://hc5tauepn14p"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_4n553"]
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="1_b0alv"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP2.gd" id="5_p5lxg"]
 [ext_resource type="PackedScene" uid="uid://bec6xqbhky3bg" path="res://scenes/games/pause_menu.tscn" id="6_vrbdj"]
 [ext_resource type="PackedScene" uid="uid://fgmvw0gcgwxo" path="res://scenes/games/animated_platformer_character.tscn" id="7_oiqbu"]
+[ext_resource type="Texture2D" uid="uid://cb077547tg121" path="res://ressources/BarreStamina.png" id="7_rfl31"]
+[ext_resource type="Script" path="res://scripts/character/ProgressStaminaP1.gd" id="8_vxdwf"]
 [ext_resource type="PackedScene" uid="uid://bshlc02fkw4ua" path="res://scenes/games/body_3d.tscn" id="10_in20u"]
 
 [node name="HUD" type="Node3D"]
@@ -41,6 +43,14 @@ texture_progress = ExtResource("3_x54ep")
 texture_progress_offset = Vector2(64, 0)
 script = ExtResource("5_p5lxg")
 player2 = NodePath("../../Player2")
+
+[node name="ProgressStaminaP1" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player1")]
+offset_top = 112.0
+offset_right = 384.0
+offset_bottom = 162.0
+texture_progress = ExtResource("7_rfl31")
+script = ExtResource("8_vxdwf")
+player1 = NodePath("../../Player1")
 
 [node name="TimerRoundStart" type="Timer" parent="."]
 wait_time = 4.0
