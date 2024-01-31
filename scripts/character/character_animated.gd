@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-class_name Player2
+class_name Player3
 
 signal hc
 
@@ -62,7 +62,6 @@ func _physics_process(delta):
 			if currentStamina <= 0 :
 				is_invulnerable = false
 				
-			wave()
 		if currentHealth <=0:
 #			is_alive = false
 			anim_state.travel(death_anim)
@@ -86,7 +85,7 @@ func rotate_character():
 
 	if Input.is_action_pressed("move_left_p2") && facing_right==true:
 		model.rotate_y(deg_to_rad(180))
-		facing_right=false
+		facing_right = false
 
 func jump():
 	if is_on_floor() and Input.is_action_just_pressed("jump_p2"):
@@ -127,14 +126,6 @@ func heal():
 	currentHealth = maxHealth
 	hurt(0)
 	hc.emit()
-
-func wave():
-	if Input.is_action_just_pressed("wave_p2") and jumping==false:
-		anim_state.travel(wave_anim)
-		get_node("RootNode/CharacterArmature/Skeleton3D/ArmAttachment/Hitbox/ArmCollisionShape").disabled = true
-
-func _unhandled_input(event):
-	pass
 
 func _on_hitbox_body_entered(body):
 	if body.is_in_group("Player1") and body.has_method("hurt"):

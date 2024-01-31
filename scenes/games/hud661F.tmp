@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://hc5tauepn14p"]
+[gd_scene load_steps=11 format=3 uid="uid://hc5tauepn14p"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_4n553"]
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="1_b0alv"]
@@ -8,12 +8,14 @@
 [ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP2.gd" id="5_p5lxg"]
 [ext_resource type="PackedScene" uid="uid://bec6xqbhky3bg" path="res://scenes/games/pause_menu.tscn" id="6_vrbdj"]
 [ext_resource type="PackedScene" uid="uid://fgmvw0gcgwxo" path="res://scenes/games/animated_platformer_character.tscn" id="7_oiqbu"]
+[ext_resource type="PackedScene" uid="uid://fvnf432m46dh" path="res://scenes/games/character_animated.tscn" id="8_6hpug"]
 [ext_resource type="PackedScene" uid="uid://bshlc02fkw4ua" path="res://scenes/games/body_3d.tscn" id="10_in20u"]
 
 [node name="HUD" type="Node3D"]
 script = ExtResource("1_4n553")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 offset = Vector2(0, -20)
 transform = Transform2D(1, 0, 0, 1, 0, -20)
 
@@ -109,11 +111,13 @@ anchors_preset = -1
 anchor_left = 0.482
 anchor_right = 0.514
 
-[node name="Player2" parent="." instance=ExtResource("10_in20u")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
-
 [node name="Player1" parent="." instance=ExtResource("7_oiqbu")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.000161052, 0, 3)
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 5)
+
+[node name="Player2" parent="." instance=ExtResource("8_6hpug")]
+visible = false
+
+[node name="Body_3D" parent="." instance=ExtResource("10_in20u")]
 
 [connection signal="timeout" from="TimerRoundStart" to="." method="_on_timer_round_start_timeout"]
 [connection signal="timeout" from="TimerGame" to="." method="_on_timer_game_timeout"]
