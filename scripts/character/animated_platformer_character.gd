@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-class_name Player1
+
 
 signal healthChanged
 signal staminaChanged

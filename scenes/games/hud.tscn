@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://hc5tauepn14p"]
+[gd_scene load_steps=13 format=3 uid="uid://hc5tauepn14p"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_4n553"]
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="1_b0alv"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cb077547tg121" path="res://ressources/BarreStamina.png" id="7_rfl31"]
 [ext_resource type="Script" path="res://scripts/character/ProgressStaminaP1.gd" id="8_vxdwf"]
 [ext_resource type="PackedScene" uid="uid://bshlc02fkw4ua" path="res://scenes/games/body_3d.tscn" id="10_in20u"]
+[ext_resource type="Script" path="res://scripts/character/player1.gd" id="12_a6n13"]
 
 [node name="HUD" type="Node3D"]
 script = ExtResource("1_4n553")
@@ -124,6 +125,7 @@ transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 
 [node name="Player1" parent="." instance=ExtResource("7_oiqbu")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, -0.000161052, 0, 3)
+script = ExtResource("12_a6n13")
 
 [connection signal="timeout" from="TimerRoundStart" to="." method="_on_timer_round_start_timeout"]
 [connection signal="timeout" from="TimerGame" to="." method="_on_timer_game_timeout"]
