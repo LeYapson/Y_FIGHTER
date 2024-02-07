@@ -156,7 +156,7 @@ bones/35/rotation = Quaternion(-7.85455e-06, 0.702952, 0.711237, -7.76306e-06)
 bones/37/rotation = Quaternion(-3.55272e-15, -5.96046e-07, 1.69407e-21, 1)
 
 [node name="ArmAttachment" type="BoneAttachment3D" parent="RootNode/CharacterArmature/Skeleton3D" index="4"]
-transform = Transform3D(-0.578381, -0.535908, -0.615043, 0.807432, -0.268575, -0.525282, 0.116317, -0.800419, 0.588048, -0.00895963, -0.000735991, 0.00535269)
+transform = Transform3D(-0.578381, -0.535907, -0.615044, 0.807432, -0.268576, -0.525282, 0.116317, -0.800419, 0.588047, -0.00895963, -0.000735988, 0.00535268)
 bone_name = "Fist.R"
 bone_idx = 25
 

@@ -120,8 +120,10 @@ func block():
 
 func hurt(damages):
 	if isInvulnerable == true:
+		currentStamina -= 10
 		currentHealth -= damages / 2
 		print(damages / 2)
+		staminaChanged.emit()
 		healthChanged.emit()
 		animState.travel(hurtAnim)
 	else:
@@ -132,7 +134,9 @@ func hurt(damages):
 		
 func heal():
 	currentHealth = maxHealth
+	currentStamina = maxStamina
 	hurt(0)
+	staminaChanged.emit()
 	healthChanged.emit()
 
 func _on_hitbox_body_entered(body):
