@@ -19,10 +19,7 @@ const JUMP_VELOCITY = 5.0
 @export var maxStamina = 100.0
 @onready var currentStamina: float = maxStamina
 
-var attackeAnim = "CharacterArmature|Punch"
-var deathAnim = "CharacterArmature|Death"
-var hurtAnim = "CharacterArmature|HitReact"
-var waveAnim = "CharacterArmature|Duck"
+var attackAnim = "anim_Hit"
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -36,6 +33,8 @@ var isInvulnerable = false
 
 var enableControls = true
 
+var enemy
+
 
 var inputAttack
 var inputBlock
@@ -47,7 +46,7 @@ var inputNull
 func _ready():
 	healthChanged.emit()
 	staminaChanged.emit()
-	animState.travel("CharacterArmature|Idle")
+	animState.travel("anim/Idle")
 	
 func _physics_process(delta):
 	if enableControls == true :
@@ -75,7 +74,8 @@ func _physics_process(delta):
 				
 		if currentHealth <=0:
 #			isAlive = false
-			animState.travel(deathAnim)
+#			animState.travel(deathAnim)
+			pass
 
 func get_move_input(delta):
 	
@@ -103,20 +103,13 @@ func jump():
 		jumping = true
 		velocity.y = JUMP_VELOCITY
 		animTree.set("parameters/conditions/jumping", true)
-		animTree.set("parameters/conditions/grounded", false)
 	if is_on_floor() and not lastFloor:
 		jumping = false
 		animTree.set("parameters/conditions/jumping", false)
-		animTree.set("parameters/conditions/grounded", true)
-	if not is_on_floor() and not jumping:
-		animState.travel("CharacterArmature|Jump_Idle")
-		animTree.set("parameters/conditions/grounded", false)
 	lastFloor = is_on_floor()
 	
 func attack():
-	$TimerAttackHitbox.start()
-	get_node("RootNode/CharacterArmature/Skeleton3D/ArmAttachment/Hitbox/ArmCollisionShape").disabled = false
-	animState.travel(attackeAnim)
+	animState.travel(attackAnim)
 
 func block():
 	if currentStamina > 0 :
@@ -132,12 +125,12 @@ func hurt(damages):
 		print(damages / 2)
 		staminaChanged.emit()
 		healthChanged.emit()
-		animState.travel(hurtAnim)
+#		animState.travel(hurtAnim)
 	else:
 		currentHealth -= damages
 		print(damages)
 		healthChanged.emit()
-		animState.travel(hurtAnim)
+#		animState.travel(hurtAnim)
 		
 func heal():
 	currentHealth = maxHealth
@@ -147,7 +140,8 @@ func heal():
 	healthChanged.emit()
 
 func _on_hitbox_body_entered(body):
-	if body.is_in_group("Player2") and body.has_method("hurt"):
+	if body.is_in_group(enemy) and body.has_method("hurt"):
+		print("work")
 		body.hurt(attackDamage)
 
 func _on_timer_attack_hitbox_timeout():

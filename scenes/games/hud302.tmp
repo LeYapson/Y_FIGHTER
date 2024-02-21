@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://hc5tauepn14p"]
+[gd_scene load_steps=13 format=3 uid="uid://hc5tauepn14p"]
 
 [ext_resource type="Script" path="res://scripts/ui/hud.gd" id="1_4n553"]
 [ext_resource type="Texture2D" uid="uid://cdj2p6608v3tx" path="res://ressources/bar-empty.png" id="1_b0alv"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://bec6xqbhky3bg" path="res://scenes/games/pause_menu.tscn" id="6_vrbdj"]
 [ext_resource type="Texture2D" uid="uid://cb077547tg121" path="res://ressources/BarreStamina.png" id="7_rfl31"]
 [ext_resource type="Script" path="res://scripts/character/ProgressStaminaP1.gd" id="8_vxdwf"]
-[ext_resource type="Script" path="res://scripts/character/ProgressStaminaP2.gd" id="9_6rjq1"]
 [ext_resource type="PackedScene" uid="uid://bshlc02fkw4ua" path="res://scenes/games/body_3d.tscn" id="10_in20u"]
 [ext_resource type="Script" path="res://scripts/character/player2.gd" id="12_6x420"]
 [ext_resource type="Script" path="res://scripts/character/player1.gd" id="12_a6n13"]
@@ -21,7 +20,7 @@ script = ExtResource("1_4n553")
 offset = Vector2(0, -20)
 transform = Transform2D(1, 0, 0, 1, 0, -20)
 
-[node name="ProgressHealthBarP1" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player1")]
+[node name="ProgressHealthBarP1" type="TextureProgressBar" parent="CanvasLayer"]
 offset_right = 384.0
 offset_bottom = 192.0
 texture_under = ExtResource("1_b0alv")
@@ -29,7 +28,6 @@ texture_over = ExtResource("2_e5osg")
 texture_progress = ExtResource("3_x54ep")
 texture_progress_offset = Vector2(64, 0)
 script = ExtResource("4_gg84o")
-player1 = NodePath("../../Player1")
 
 [node name="ProgressHealthBarP2" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player2")]
 anchors_preset = 1
@@ -46,23 +44,12 @@ texture_progress_offset = Vector2(64, 0)
 script = ExtResource("5_p5lxg")
 player2 = NodePath("../../Player2")
 
-[node name="ProgressStaminaP1" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player1")]
+[node name="ProgressStaminaP1" type="TextureProgressBar" parent="CanvasLayer"]
 offset_top = 112.0
 offset_right = 384.0
 offset_bottom = 162.0
 texture_progress = ExtResource("7_rfl31")
 script = ExtResource("8_vxdwf")
-player1 = NodePath("../../Player1")
-
-[node name="ProgressStaminaP2" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player2")]
-offset_left = 1535.0
-offset_top = 111.0
-offset_right = 1919.0
-offset_bottom = 161.0
-fill_mode = 1
-texture_progress = ExtResource("7_rfl31")
-script = ExtResource("9_6rjq1")
-player2 = NodePath("../../Player2")
 
 [node name="TimerRoundStart" type="Timer" parent="."]
 wait_time = 4.0
@@ -131,12 +118,14 @@ anchors_preset = -1
 anchor_left = 0.482
 anchor_right = 0.514
 
-[node name="Player1" parent="." groups=["Player1"] instance=ExtResource("10_in20u")]
+[node name="Player1" parent="." instance=ExtResource("10_in20u")]
 transform = Transform3D(-1.3, 0, -1.1365e-07, 0, 1.3, 0, 1.1365e-07, 0, -1.3, 0, 0, 4.122)
 script = ExtResource("12_a6n13")
+maxHealth = null
+maxStamina = null
 
-[node name="Player2" parent="." groups=["Player2"] instance=ExtResource("10_in20u")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.794116, 0, 0.394296)
+[node name="Player2" parent="." instance=ExtResource("10_in20u")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 0, 0, 0)
 script = ExtResource("12_6x420")
 
 [connection signal="timeout" from="TimerRoundStart" to="." method="_on_timer_round_start_timeout"]

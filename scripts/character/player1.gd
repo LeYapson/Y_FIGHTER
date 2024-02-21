@@ -5,8 +5,7 @@ class_name Player1
 func _ready():
 	healthChanged.emit()
 	staminaChanged.emit()
-	animState.travel("CharacterArmature|Idle")
-	get_node("RootNode/CharacterArmature/Skeleton3D/ArmAttachment/Hitbox/ArmCollisionShape").disabled = true
+	animState.travel("anim/Idle")
 	facingRight = true
 	inputAttack = "attackP1"
 	inputBlock = "blockP1"
@@ -14,3 +13,15 @@ func _ready():
 	inputMoveRight = "moveRightP1"
 	inputJump = "jumpP1"
 	inputNull = "nullKey"
+	
+func get_move_input(delta):
+	
+	var vy = velocity.y
+	velocity.y = 0.0
+	
+	var input = Input.get_vector("nullKey", "nullKey", inputMoveRight, inputMoveLeft)
+	var dir = Vector3(0, 0, input.y)
+	velocity = lerp(velocity, dir * SPEED, ACCELERATION * delta)
+	var vl = velocity * model.transform.basis
+	animTree.set("parameters/IdleWalk/blend_position", -vl.z/SPEED)
+	velocity.y = vy
