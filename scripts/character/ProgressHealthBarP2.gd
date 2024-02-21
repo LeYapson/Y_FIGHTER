@@ -1,6 +1,6 @@
 extends TextureProgressBar
 
-@export var player2: Player2
+@export var player2: CharacterBody3D
 
 func _ready():
 	player2.healthChanged.connect(update)
