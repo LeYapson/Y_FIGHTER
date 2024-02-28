@@ -35,7 +35,6 @@ var enableControls = true
 
 var enemy
 
-
 var inputAttack
 var inputBlock
 var inputMoveLeft
@@ -139,9 +138,13 @@ func heal():
 	staminaChanged.emit()
 	healthChanged.emit()
 
-func _on_hitbox_body_entered(body):
+#func _on_hitbox_body_entered(body):
+#	if body.is_in_group(enemy) and body.has_method("hurt"):
+#		print("work")
+#		body.hurt(attackDamage)
+
+func _on_area_3d_body_entered(body):
 	if body.is_in_group(enemy) and body.has_method("hurt"):
-		print("work")
 		body.hurt(attackDamage)
 
 func _on_timer_attack_hitbox_timeout():

@@ -13,6 +13,7 @@ func _ready():
 	inputMoveRight = "moveRightP1"
 	inputJump = "jumpP1"
 	inputNull = "nullKey"
+	enemy = "Player2"
 	
 func get_move_input(delta):
 	
