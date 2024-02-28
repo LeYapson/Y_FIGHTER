@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bec6xqbhky3bg"]
+[gd_scene load_steps=6 format=3 uid="uid://bec6xqbhky3bg"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause_menu.gd" id="1_682dy"]
 [ext_resource type="Script" path="res://scripts/ui/TextureButton.gd" id="2_jyegc"]
 [ext_resource type="Texture2D" uid="uid://bxk5rrc8h3rq6" path="res://assets/ui/button.png" id="2_mo2l8"]
+[ext_resource type="Texture2D" uid="uid://be740j3eybcah" path="res://assets/ui/button_press.png" id="4_ttb0g"]
+[ext_resource type="FontFile" uid="uid://dp64bvv6uha1i" path="res://assets/ui/font/advanced_pixel-7.ttf" id="5_t4egu"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -35,17 +37,49 @@ script = ExtResource("2_jyegc")
 layout_mode = 2
 text = "Quit"
 
-[node name="TextureButton" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+[node name="ResumeButton" type="TextureButton" parent="."]
 visible = false
-layout_mode = 2
-texture_normal = ExtResource("2_mo2l8")
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/TextureButton"]
 layout_mode = 0
-offset_right = 71.0
-offset_bottom = 40.0
-text = "TEST"
+offset_left = 130.0
+offset_top = -60.0
+offset_right = 390.0
+offset_bottom = 20.0
+texture_normal = ExtResource("2_mo2l8")
+texture_pressed = ExtResource("4_ttb0g")
+texture_hover = ExtResource("4_ttb0g")
+
+[node name="Label" type="Label" parent="ResumeButton"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -1.0
+offset_right = 225.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("5_t4egu")
+theme_override_font_sizes/font_size = 80
+text = "RESUME"
+horizontal_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = 390.0
+offset_bottom = 130.0
+texture_normal = ExtResource("2_mo2l8")
+texture_pressed = ExtResource("4_ttb0g")
+texture_hover = ExtResource("4_ttb0g")
+
+[node name="Label" type="Label" parent="QuitButton"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = -1.0
+offset_right = 225.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("5_t4egu")
+theme_override_font_sizes/font_size = 80
+text = "QUIT"
+horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]

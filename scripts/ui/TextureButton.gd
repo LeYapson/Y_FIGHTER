@@ -5,3 +5,7 @@ extends Button
 func _ready():
 	grab_focus()
 
+
+
+func _on_resume_button_pressed():
+	pass # Replace with function body.

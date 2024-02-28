@@ -6,13 +6,13 @@
 [ext_resource type="Texture2D" uid="uid://b81f8tblp45v1" path="res://ressources/bar-full.png" id="3_x54ep"]
 [ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP1.gd" id="4_gg84o"]
 [ext_resource type="Script" path="res://scripts/character/ProgressHealthBarP2.gd" id="5_p5lxg"]
-[ext_resource type="PackedScene" uid="uid://bec6xqbhky3bg" path="res://scenes/games/pause_menu.tscn" id="6_vrbdj"]
 [ext_resource type="Texture2D" uid="uid://cb077547tg121" path="res://ressources/BarreStamina.png" id="7_rfl31"]
 [ext_resource type="Script" path="res://scripts/character/ProgressStaminaP1.gd" id="8_vxdwf"]
 [ext_resource type="Script" path="res://scripts/character/ProgressStaminaP2.gd" id="9_6rjq1"]
 [ext_resource type="PackedScene" uid="uid://bshlc02fkw4ua" path="res://scenes/games/body_3d.tscn" id="10_in20u"]
 [ext_resource type="Script" path="res://scripts/character/player2.gd" id="12_6x420"]
 [ext_resource type="Script" path="res://scripts/character/player1.gd" id="12_a6n13"]
+[ext_resource type="PackedScene" uid="uid://bu2syb0g4nsl8" path="res://scenes/games/pause_menu_enhanced.tscn" id="13_i3qaa"]
 
 [node name="HUD" type="Node3D"]
 script = ExtResource("1_4n553")
@@ -125,18 +125,15 @@ offset_right = 1.0
 offset_bottom = 28.0
 theme_override_font_sizes/font_size = 20
 
-[node name="PauseMenu" parent="." instance=ExtResource("6_vrbdj")]
+[node name="PauseMenuEnhanced" parent="." instance=ExtResource("13_i3qaa")]
 visible = false
-anchors_preset = -1
-anchor_left = 0.482
-anchor_right = 0.514
 
 [node name="Player1" parent="." groups=["Player1"] instance=ExtResource("10_in20u")]
 transform = Transform3D(-1.3, 0, -1.1365e-07, 0, 1.3, 0, 1.1365e-07, 0, -1.3, 0, 0, 4.122)
 script = ExtResource("12_a6n13")
 
 [node name="Player2" parent="." groups=["Player2"] instance=ExtResource("10_in20u")]
-transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.374542, 0, 0.394296)
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, -0.794116, 0, 0.394296)
 script = ExtResource("12_6x420")
 
 [connection signal="timeout" from="TimerRoundStart" to="." method="_on_timer_round_start_timeout"]

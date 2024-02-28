@@ -2,7 +2,8 @@ extends Node3D
 
 @onready var player1 = $Player1
 @onready var player2 = $Player2
-@onready var pause_menu = $PauseMenu
+@onready var pause_menu_enhanced = $PauseMenuEnhanced
+# @onready var pause_menu = $PauseMenu
 
 var paused = false
 
@@ -96,13 +97,15 @@ func restart_round():
 func pauseMenu():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE) 
 	if paused :
-		pause_menu.hide()
+		pause_menu_enhanced.hide()
+		#pause_menu.hide()
 #		get_tree().paused = false
 		Engine.time_scale = 1
 		player1.enableControls = true
 		player2.enableControls = true
 	else:
-		pause_menu.show()
+		pause_menu_enhanced.show()
+		#pause_menu.show()
 #		get_tree().paused = true
 		Engine.time_scale = 0
 		player1.enableControls = false
